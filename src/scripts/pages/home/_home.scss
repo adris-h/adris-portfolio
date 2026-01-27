@@ -1,24 +1,34 @@
 #card{
-  @include flex(column, $gap: 0.5em);
-  border: 1px solid white;
-  width: 50vw;
+  @include flex(column);
+
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  width: 40vw;
   max-width: 1000px;
   min-width: 400px;
-  height: 45vh;
+  height: 40vh;
   padding: 0.4em;
   $border-radius: 0.2em;
   $transperent-border: color-mix(in srgb, $text-color 50%, transparent);
 
   border-radius: $border-radius + 0.1em;
 
+  transition: 900ms scale 300ms ;
+
+  &:hover{
+    transform: scale(1.05);
+  }
+
 
   &_socials{
-    border: 1px solid $transperent-border;
-
-
+    //border: 1px solid $transperent-border;
     box-sizing: border-box;
     @include flex(row, $justify: flex-start, $gap: 0.3em);
-    padding: 0 0.3em;
+    //padding: 0 0.3em;
     border-radius: $border-radius;
 
     a{
@@ -53,10 +63,30 @@
       border-radius: $border-radius;
     }
     .bio{
-      border: 1px solid $transperent-border;
+      //border: 1px solid $transperent-border;
       height: 100%;
       width: 100%;
       border-radius: $border-radius;
+      font-size: 1rem;
+      @include flex(column, flex-start,  flex-end, 2rem);
+      h1{
+        font-size: 2.5em;
+        margin: 0;
+      }
+
+      h2{
+        font-size: 1em;
+        margin: 0;
+        opacity: .4;
+      }
+
+      span:nth-child(2){
+        @include flex(column, flex-start,  flex-end);
+        p{
+          margin: 0;
+          font-size: 1.2em;
+        }
+      }
     }
   }
 

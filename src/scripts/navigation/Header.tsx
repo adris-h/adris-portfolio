@@ -1,38 +1,55 @@
+import {useState} from "react";
+
 function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
+
+    function langChange(e: React.MouseEvent<HTMLAnchorElement>) {
+        const target = e.target as HTMLAnchorElement;
+        const anchors = document.querySelectorAll("#language-holder a");
+        anchors.forEach((anchor) => {
+            anchor.classList.remove("active");
+        })
+        target.classList.add('active');
+        const language = target.dataset.lang;
+        console.log(language);
+        // setIsMenuOpen(false);
+    }
+
+    function closeMenu() {
+        setIsClosing(true);
+        setTimeout(() => {
+            setIsMenuOpen(false);
+            setIsClosing(false);
+        }, 400);
+    }
+
+    function toggleMenu() {
+        if (isMenuOpen) {
+            closeMenu();
+        } else {
+            setIsMenuOpen(true);
+        }
+    }
+
     return <>
         <header id="header">
             <span id="header_left">
                 <a href="/" className="header-link link">icon logo</a>
                 <a className="header-link link">icon mode</a>
             </span>
-            <a className="header-link link" onClick={openMenu}>icon lang</a>
-            <div id="language-holder">
-                <a href="#" className="active" onClick={(e) => langChange(e)} data-lang="en">english</a>
-                <a href="#" onClick={(e) => langChange(e)} data-lang="cs">czech</a>
-                <a href="#" onClick={(e) => langChange(e)} data-lang="de">german</a>
-            </div>
+            <a className="header-link link" onClick={toggleMenu}>icon lang</a>
+            {isMenuOpen && (
+                <div id="language-holder" className={isClosing ? 'inactive' : ''}>
+                    <a href="#" className="active" onClick={langChange} data-lang="en">english</a>
+                    <a href="#" onClick={langChange} data-lang="cs">czech</a>
+                </div>
+            )}
         </header>
 
 
     </>
 }
 
-function langChange(e: React.MouseEvent<HTMLAnchorElement>) {
-    const target = e.target as HTMLAnchorElement;
-    const language = target.dataset.lang;
-    console.log(language);
-}
-
-function openMenu(){
-    console.log("wsg");
-    langMenu()
-}
-
-function langMenu(){
-    console.log("langMenu");
-    return <>
-
-    </>
-}
 
 export default Header;

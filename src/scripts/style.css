@@ -1,0 +1,422 @@
+:root {
+  --text-color: #fbf9e9;
+  --bg-color: #181616;
+  --accent-color: #f43028;
+}
+
+:root {
+  --nav-width: 8vw;
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  font-size: 3vw;
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#nav {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  font-size: 1.5rem;
+}
+#nav .nav-link {
+  width: 8%;
+  height: 80%;
+}
+
+#header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  font-size: 1rem;
+}
+#header_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+#header .header-link {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+#header #language-holder {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 10vh;
+  width: 30vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 2vw 2vw;
+}
+#header #language-holder a {
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 0.2em;
+  position: relative;
+  cursor: pointer;
+  transition: 100ms;
+  color: black;
+  z-index: 10;
+}
+#header #language-holder a:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--text-color);
+  z-index: -1;
+  transition: 200ms;
+}
+#header #language-holder a:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--accent-color);
+  z-index: -1;
+  transition: 200ms ease;
+}
+#header #language-holder a:hover {
+  color: var(--text-color);
+}
+#header #language-holder a:hover:after {
+  width: 100%;
+}
+#header #language-holder a.active {
+  color: var(--text-color);
+}
+#header #language-holder a.active:before {
+  background-color: var(--accent-color);
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  text-align: center;
+  transition: 200ms;
+  cursor: pointer;
+}
+.link:hover {
+  color: var(--accent-color);
+}
+.link:active {
+  color: var(--accent-color);
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: nowrap;
+  border: 1px solid white;
+  width: 50vw;
+  max-width: 1000px;
+  min-width: 400px;
+  height: 45vh;
+  padding: 0.4em;
+  border-radius: 0.3em;
+}
+#card_socials {
+  border: 1px solid color-mix(in srgb, var(--text-color) 50%, transparent);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3em;
+  flex-wrap: nowrap;
+  padding: 0 0.3em;
+  border-radius: 0.2em;
+}
+#card_socials a {
+  font-size: 0.5em;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 0.2em;
+  position: relative;
+  cursor: pointer;
+  transition: 100ms;
+  color: black;
+  z-index: 10;
+}
+#card_socials a:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--text-color);
+  z-index: -1;
+  transition: 200ms;
+}
+#card_socials a:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--accent-color);
+  z-index: -1;
+  transition: 200ms ease;
+}
+#card_socials a:hover {
+  color: var(--text-color);
+}
+#card_socials a:hover:after {
+  width: 100%;
+}
+#card_main-content {
+  width: 100%;
+  height: 80%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  flex-wrap: nowrap;
+}
+#card_main-content .photo {
+  aspect-ratio: 1/1;
+  background: var(--text-color);
+  background-image: url("../assets/avata-redr.webp");
+  background-size: contain;
+  height: 100%;
+  border-radius: 0.2em;
+}
+#card_main-content .bio {
+  border: 1px solid color-mix(in srgb, var(--text-color) 50%, transparent);
+  height: 100%;
+  width: 100%;
+  border-radius: 0.2em;
+}
+#card_socials {
+  width: 100%;
+  height: 20%;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 70vw;
+  height: 80vh;
+}
+#projects_selected {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+#projects_selected .project {
+  opacity: 0;
+  width: 50%;
+  height: 100%;
+  animation: slide-in ease-in-out 400ms forwards;
+}
+#projects_selected .project[data-project="2"] {
+  animation-delay: 100ms;
+}
+#projects_selected .project-holder {
+  height: 80%;
+  width: 100%;
+  border: 1px solid var(--text-color);
+  border-radius: 0.2em;
+}
+#projects_selected .project-name {
+  font-size: 0.6em;
+}
+#projects_button {
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 0.2em;
+  position: relative;
+  cursor: pointer;
+  transition: 100ms;
+  color: black;
+  z-index: 10;
+}
+#projects_button:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--text-color);
+  z-index: -1;
+  transition: 200ms;
+}
+#projects_button:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--accent-color);
+  z-index: -1;
+  transition: 200ms ease;
+}
+#projects_button:hover {
+  color: var(--text-color);
+}
+#projects_button:hover:after {
+  width: 100%;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#main-section {
+  height: 70vh;
+  width: calc(100% - var(--nav-width));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+h2 {
+  font-size: 3vw;
+}
+
+#construction-popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  backdrop-filter: blur(10px) brightness(50%);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+#construction-popup h3, #construction-popup p {
+  margin: 0;
+}
+#construction-popup button {
+  font-size: 0.5em;
+  font-family: "argent-pixel-cf", sans-serif;
+  border: none;
+  background: none;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  position: relative;
+  cursor: pointer;
+  transition: 100ms;
+  color: black;
+  z-index: 10;
+}
+#construction-popup button:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--text-color);
+  z-index: -1;
+  transition: 200ms;
+}
+#construction-popup button:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 0.2em;
+  background-color: var(--accent-color);
+  z-index: -1;
+  transition: 200ms ease;
+}
+#construction-popup button:hover {
+  color: var(--text-color);
+}
+#construction-popup button:hover:after {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

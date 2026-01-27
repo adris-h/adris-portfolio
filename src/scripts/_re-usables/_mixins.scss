@@ -1,0 +1,49 @@
+@mixin flex($dir, $justify: center, $align: center, $gap: 0, $wrap: nowrap){
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+
+@mixin buttonComponent($border-radius){
+  &:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: $border-radius;
+    background-color: $text-color;
+    z-index: -1;
+    transition: $transition;
+
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    border-radius: $border-radius;
+    background-color: $acc-color;
+    z-index: -1;
+    transition: $transition ease;
+
+  }
+  transition: 100ms;
+  color: black;
+  z-index: 10;
+
+  &:hover{
+    &:after{
+      width: 100%;
+    }
+
+    color: $text-color;
+  }
+}

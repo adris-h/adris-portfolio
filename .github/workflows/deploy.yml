@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: List dist contents
-        run: ls -la dist/
+        run: ls -la build/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './build'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

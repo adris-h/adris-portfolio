@@ -34,13 +34,21 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "=== Contents of build directory ==="
+          ls -la build/
+          echo "=== Contents of build/index.html ==="
+          cat build/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build'
+          path: build
+          retention-days: 1
 
       - name: Deploy to GitHub Pages
         id: deployment

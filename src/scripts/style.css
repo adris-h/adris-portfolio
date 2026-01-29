@@ -10,11 +10,10 @@
   color: var(--bg-color);
 }
 
-#root {
+/*#root{
   height: 100%;
   width: 100%;
-}
-
+}*/
 body {
   color: var(--text-color);
   background: url("../assets/curves.svg");

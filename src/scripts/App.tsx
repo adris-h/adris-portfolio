@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './navigation/Nav.tsx'
 import Header from './navigation/Header.tsx'
 
@@ -8,29 +9,19 @@ import Projects from "./pages/projects/Projects.tsx"
 import Home from "./pages/home/Home.tsx";
 
 function App() {
-    let Component = Home;
-    switch (window.location.pathname) {
-        case "/":
-            Component = Home;
-            break;
-        case "/skills":
-            Component = Skills;
-            break;
-        case "/projects":
-            Component = Projects
-            break;
-        /*case "/contact":
-            Component = Contact
-            break;*/
-    }
     return (
-        <>
+        <BrowserRouter>
             <Header/>
             <section id="main-section">
-                <Component/>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/skills" element={<Skills />} />
+                    <Route path="/projects" element={<Projects />} />
+                    {/*<Route path="/contact" element={<Contact />} />*/}
+                </Routes>
             </section>
             <Nav/>
-        </>
+        </BrowserRouter>
     )
 }
 

@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adris Han</title>
     <link rel="stylesheet" href="https://use.typekit.net/jta7qel.css">
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
-  <body id="root">
-
+    <body id="root">
     <script type="module" src="/src/scripts/main.tsx"></script>
   </body>
 </html>

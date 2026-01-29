@@ -47,3 +47,16 @@
     color: $text-color;
   }
 }
+
+@mixin cardComponent(){
+  background: rgba(24, 22, 22, 0.91);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.54);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+
+  border-radius: 0.2em + 0.1em;
+
+  transition: 900ms scale 300ms ;
+}

@@ -11,6 +11,23 @@
     height: 80%;
     //border: 1px solid white;
 
+    opacity: .9;
+    &[data-link="projects"]{
+      background-image: url("../assets/folder.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+
+    &:hover{
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    &:active{
+      opacity: .9;
+      transform: scale(1);
+    }
   }
 }
 
@@ -29,16 +46,40 @@
   .header-link{
     height: 100%;
     aspect-ratio: 1/1;
+    opacity: .9;
 
     //border: 1px solid white;
 
+    &[data-mode="light"]{
+      background-image: url("../assets/sun.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+
+    &[data-link="cz"]{
+      background-image: url("../assets/cz.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+
+    &:hover{
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    &:active{
+      opacity: .9;
+      transform: scale(1);
+    }
   }
 
   #language-holder{
     position: absolute;
     right: 0;
     top: 0;
-    margin-top: $header-height;
+    margin-top: calc(#{$header-height} * 1.2);
 
     width: 30vw;
     height: 40vh;
@@ -48,7 +89,7 @@
 
     &.inactive{
       a{
-        animation: ease-in-out button-slide-out 400ms forwards;
+        animation: ease-in-out button-slide-out 300ms forwards;
 
         &:nth-child(2){
           animation-delay: -100ms ;
@@ -71,7 +112,7 @@
       cursor: pointer;
       @include buttonComponent($border-radius);
 
-      animation: ease-in-out button-slide-in 400ms forwards;
+      animation: ease-in-out button-slide-in 300ms forwards;
 
       &:nth-child(2){
         animation-delay: 100ms ;

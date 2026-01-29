@@ -2,9 +2,6 @@
   --text-color: #fbf9e9;
   --bg-color: #181616;
   --accent-color: #f43028;
-}
-
-:root {
   --nav-width: 8vw;
 }
 
@@ -14,8 +11,11 @@
 }
 
 body {
-  background-color: var(--bg-color);
   color: var(--text-color);
+  background: url("../assets/curves.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -45,6 +45,21 @@ body {
 #nav .nav-link {
   width: 8%;
   height: 80%;
+  opacity: 0.9;
+}
+#nav .nav-link[data-link=projects] {
+  background-image: url("../assets/folder.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+#nav .nav-link:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+#nav .nav-link:active {
+  opacity: 0.9;
+  transform: scale(1);
 }
 
 #header {
@@ -70,12 +85,33 @@ body {
 #header .header-link {
   height: 100%;
   aspect-ratio: 1/1;
+  opacity: 0.9;
+}
+#header .header-link[data-mode=light] {
+  background-image: url("../assets/sun.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+#header .header-link[data-link=cz] {
+  background-image: url("../assets/cz.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+#header .header-link:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+#header .header-link:active {
+  opacity: 0.9;
+  transform: scale(1);
 }
 #header #language-holder {
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: 10vh;
+  margin-top: calc(10vh * 1.2);
   width: 30vw;
   height: 40vh;
   display: flex;
@@ -87,7 +123,7 @@ body {
   padding: 2vw 2vw;
 }
 #header #language-holder.inactive a {
-  animation: ease-in-out button-slide-out 400ms forwards;
+  animation: ease-in-out button-slide-out 300ms forwards;
 }
 #header #language-holder.inactive a:nth-child(2) {
   animation-delay: -100ms;
@@ -103,7 +139,7 @@ body {
   transition: 100ms;
   color: black;
   z-index: 10;
-  animation: ease-in-out button-slide-in 400ms forwards;
+  animation: ease-in-out button-slide-in 300ms forwards;
 }
 #header #language-holder a:before {
   content: "";
@@ -192,9 +228,9 @@ body {
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(24, 22, 22, 0.91);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.54);
   backdrop-filter: blur(7.1px);
   -webkit-backdrop-filter: blur(7.1px);
   border: 1px solid rgba(255, 255, 255, 0.21);
@@ -226,6 +262,7 @@ body {
   border-radius: 0.2em;
   position: relative;
   cursor: pointer;
+  color: red;
   transition: 100ms;
   color: black;
   z-index: 10;

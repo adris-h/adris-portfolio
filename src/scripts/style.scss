@@ -3,9 +3,6 @@
 
 
 
-:root{
-  --nav-width: 8vw;
-}
 
 ::selection{
   background-color: $text-color;
@@ -13,8 +10,12 @@
 }
 
 body{
-  background-color: $bg-color;
+  //background-color: $bg-color;
   color: $text-color;
+  background: url("../assets/curves.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   margin: 0;
   padding: 0;

@@ -27,6 +27,8 @@ function Home() {
             card.style.transform = 'rotateX(0) rotateY(0)';
         };
 
+        
+
         card.addEventListener("mousemove", handleMouseMove);
         card.addEventListener("mouseleave", handleMouseLeave);
 

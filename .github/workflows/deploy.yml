@@ -38,6 +38,8 @@ jobs:
         run: |
           echo "=== Contents of build directory ==="
           ls -la build/
+          echo "=== Contents of build/assets directory ==="
+          ls -la build/assets/
           echo "=== Contents of build/index.html ==="
           cat build/index.html
 

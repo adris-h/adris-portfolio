@@ -32,7 +32,10 @@ body{
 
   font-size: 3vw;
 
+  //font-family: "argent-pixel-cf", sans-serif;
+
   font-family: "argent-pixel-cf", sans-serif;
+  //font-family: "scale-variable", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -42,6 +45,8 @@ body{
 
 @import "pages/projects/projects";
 
+@import "pages/skills/skills";
+
 #main-section {
   height: 70vh;
   width: calc(100% - var(--nav-width));
@@ -50,6 +55,8 @@ body{
 
 h2{
   font-size: 3vw;
+  font-weight: 300;
+  margin: 0;
 }
 
 #construction-popup{

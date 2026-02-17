@@ -390,8 +390,12 @@ body {
 #projects_selected .project-holder {
   height: 80%;
   width: 100%;
-  border: 1px solid var(--text-color);
-  border-radius: 0.2em;
+  background: rgba(24, 22, 22, 0.91);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.54);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.21);
 }
 #projects_selected .project-name {
   font-size: 0.6em;
@@ -448,6 +452,13 @@ body {
     transform: translateY(0);
   }
 }
+#skills {
+  position: absolute;
+  border: 1px solid red;
+  width: 20vw;
+  height: 20vh;
+}
+
 #main-section {
   height: 70vh;
   width: calc(100% - var(--nav-width));
@@ -461,6 +472,8 @@ body {
 
 h2 {
   font-size: 3vw;
+  font-weight: 300;
+  margin: 0;
 }
 
 #construction-popup {

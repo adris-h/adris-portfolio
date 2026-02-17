@@ -23,7 +23,8 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                     <button id="maximize"
                             onMouseEnter={() => displayHoverInfo("maximize skills")}
                             onMouseLeave={hideHoverInfo}
-                    ></button>
+                            onClick={() => displayHoverInfo("doesnt do anything yet")}>
+                    </button>
                </span>
                <p>skills</p>
            </div>

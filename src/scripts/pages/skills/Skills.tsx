@@ -8,7 +8,20 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
     console.log("clicked skills")
     return <>
        <div id='skills'>
-           <button onClick={closeSkills}>close</button>
+           <span className="header">
+               <span>
+                    <button id="close" onClick={closeSkills}></button>
+                    <button id="maximize"></button>
+               </span>
+               <p>skills</p>
+           </span>
+           <div className="skills-content">
+               <h2>Skills</h2>
+               <p>
+                   My skill set will be displayed here.
+               </p>
+
+           </div>
        </div>
     </>
 

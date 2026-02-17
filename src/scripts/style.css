@@ -454,11 +454,78 @@ body {
 }
 #skills {
   position: absolute;
-  border: 1px solid red;
-  width: 20vw;
-  height: 20vh;
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  background-color: var(--bg-color);
+  width: 50vw;
+  border-radius: 0.3em;
+  height: 60vh;
+  animation: ease-in popOut 200ms;
+}
+#skills .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+#skills .header button {
+  border-radius: 100%;
+  width: 0.8em;
+  aspect-ratio: 1/1;
+  border: none;
+  cursor: pointer;
+}
+#skills .header button#close {
+  background-color: var(--accent-color);
+}
+#skills .header button#maximize {
+  background-color: #f4c428;
+  margin-left: 0.5em;
+}
+#skills .header button:hover {
+  opacity: 0.8;
+}
+#skills .header p {
+  color: rgba(255, 255, 255, 0.73);
+}
+#skills .skills-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+  font-size: 1rem;
+}
+#skills .skills-content h2 {
+  font-size: 2em;
+  text-align: left;
+}
+#skills .skills-content p {
+  text-align: center;
 }
 
+@keyframes popOut {
+  50% {
+    transform: scale(1.05);
+  }
+}
 #main-section {
   height: 70vh;
   width: calc(100% - var(--nav-width));

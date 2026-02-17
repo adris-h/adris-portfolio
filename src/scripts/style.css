@@ -489,8 +489,12 @@ body {
 #skills .header button#close {
   background-color: var(--accent-color);
 }
+#skills .header button#nothing {
+  background-color: #2d2d2d;
+  margin-left: 0.5em;
+}
 #skills .header button#maximize {
-  background-color: #f4c428;
+  background-color: #28f42b;
   margin-left: 0.5em;
 }
 #skills .header button:hover {
@@ -603,6 +607,15 @@ h2 {
 }
 #construction-popup button:hover:after {
   width: 100%;
+}
+
+#hoverText {
+  position: absolute;
+  font-size: 0.8rem;
+  border-radius: 0.2em;
+  background: var(--accent-color);
+  color: var(--text-color);
+  padding: 0.4em 0.6em;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -90,3 +90,13 @@ h2{
     @include buttonComponent(0.2em);
   }
 }
+
+#hoverText{
+  position: absolute;
+  font-size: .8rem;
+
+  border-radius: 0.2em;
+  background: $acc-color;
+  color: $text-color;
+  padding: 0.4em 0.6em;
+}

@@ -1,45 +1,51 @@
-/*import gsap from 'gsap';
-import { Draggable } from 'gsap/Draggable';
-import { InertiaPlugin } from 'gsap/InertiaPlugin';
-gsap.registerPlugin(Draggable, InertiaPlugin);*/
-
+import {useState} from "react";
+import * as React from "react";
 function Skills({showSkills, setShowSkills}: SkillsProps) {
+    const [hoverText, setHoverText] = useState<string | null>(null);
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     if (!showSkills) {return null}
-    console.log("clicked skills")
+    const displayHoverInfo = (info: string) => setHoverText(info);
+    const hideHoverInfo = () => setHoverText(null);
+
+
     return <>
-       <div id='skills'>
-           <span className="header">
+       <div id='skills' onMouseMove={debugMouse}>
+           <div className="header">
                <span>
-                    <button id="close" onClick={closeSkills}></button>
-                    <button id="maximize"></button>
+                    <button id="close" onClick={() => {setShowSkills(false); hideHoverInfo()}}
+                            onMouseEnter={() => displayHoverInfo("close skills")}
+                            onMouseLeave={hideHoverInfo}>
+                    </button>
+                    <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
+                            onMouseEnter={() => displayHoverInfo("does nothing")}
+                            onMouseLeave={hideHoverInfo}
+                    ></button>
+                    <button id="maximize"
+                            onMouseEnter={() => displayHoverInfo("maximize skills")}
+                            onMouseLeave={hideHoverInfo}
+                    ></button>
                </span>
                <p>skills</p>
-           </span>
+           </div>
            <div className="skills-content">
                <h2>Skills</h2>
                <p>
                    My skill set will be displayed here.
                </p>
-
            </div>
        </div>
+        {hoverText && (
+            <div id="hoverText" style={{ left: mousePos.x, top: mousePos.y }}>
+                {hoverText}
+            </div>
+        )}
     </>
 
-    function closeSkills() {
-       console.log("closing skills")
-        const skillsPopUp = document.getElementById("skills");
-        if (skillsPopUp) {
-            setShowSkills(false);
-        }
+    function debugMouse(event: React.MouseEvent) {
+        setMousePos({x: event.clientX - 10, y: event.clientY + 25})
     }
 }
 export default Skills;
-
-/*
-Draggable.create("#skills", {
-    bounds: "body",
-    inertia: true
-});*/
 
 interface SkillsProps {
     showSkills: boolean,

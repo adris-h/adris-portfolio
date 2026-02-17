@@ -7,7 +7,6 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);
 
-
     return <>
        <div id='skills' onMouseMove={debugMouse}>
            <div className="header">
@@ -29,10 +28,108 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                <p>skills</p>
            </div>
            <div className="skills-content">
-               <h2>Skills</h2>
-               <p>
-                   My skill set will be displayed here.
-               </p>
+
+               <div id="skill-graphs">
+                   <h2>Web Development</h2>
+                   <div className="skill web">
+                      <div className="skill-container">
+                          <p>3 years</p>
+                          <div className="skill-graph" id="html">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                          </div>
+                          <p>5 years</p>
+                      </div>
+                   </div>
+                   <div className="skill web">
+                       <div className="skill-container">
+                           <p>3 years</p>
+                           <div className="skill-graph" id="css">
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+                   <div className="skill web">
+                       <div className="skill-container">
+                           <p>1 year</p>
+                           <div className="skill-graph" id="js">
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+                   <div className="skill web">
+                       <div className="skill-container">
+                           <p>months</p>
+                           <div className="skill-graph" id="react">
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+                   <p>
+                       some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
+                   </p>
+                   <h2>Web Design</h2>
+                   <div className="skill web">
+                       <div className="skill-container">
+                           <p>3 years</p>
+                           <div className="skill-graph" >
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+
+                   <h2>Game Development</h2>
+                   <div className="skill ">
+                       <div className="skill-container">
+                           <p>months</p>
+                           <div className="skill-graph" >
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+                   <div className="skill">
+                       <div className="skill-container">
+                           <p>months</p>
+                           <div className="skill-graph">
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+
+               </div>
            </div>
        </div>
         {hoverText && (

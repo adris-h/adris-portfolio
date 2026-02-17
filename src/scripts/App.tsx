@@ -3,6 +3,8 @@ import Nav from './navigation/Nav.tsx'
 import Header from './navigation/Header.tsx'
 import Home from './pages/home/Home.tsx'
 
+const currentYear = new Date().getFullYear()
+
 function App() {
     return <>
         <Header/>
@@ -10,6 +12,7 @@ function App() {
                <Home/>
            </section>
         <Nav/>
+        <footer id="footer">All Rights Reserved @ {currentYear} Adris Han </footer>
     </>
 }
 

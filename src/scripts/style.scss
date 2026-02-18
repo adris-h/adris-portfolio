@@ -110,3 +110,53 @@ h2{
   padding: 0.5em 0.7em;
   opacity: 0.2;
 }
+
+.window{
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  @include flex(column);
+
+  background-color: $bg-color;
+  width: 50vw;
+  border-radius: 0.3em;
+  height: 60vh;
+  animation: ease-in popOut 200ms;
+
+  .header {
+    @include flex(row, space-between);
+    font-size: 1rem;
+    width: 100%;
+    padding: 0 1em;
+    box-sizing: border-box;
+
+    button{
+      border-radius: 100%;
+      width: 0.8em;
+      aspect-ratio: 1/1;
+
+      border: none;
+      cursor: pointer;
+
+      &#close{
+        background-color: $acc-color;
+      }
+
+      &#nothing{
+        background-color: #2d2d2d;
+        margin-left: 0.5em;
+      }
+
+      &#maximize{
+        background-color: #28f42b;
+        margin-left: 0.5em;
+      }
+
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+    p{
+      color: rgba(255, 255, 255, 0.73);
+    }
+  }
+}

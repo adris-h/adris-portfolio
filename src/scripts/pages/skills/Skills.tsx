@@ -8,7 +8,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
     const hideHoverInfo = () => setHoverText(null);
 
     return <>
-       <div id='skills' onMouseMove={debugMouse}>
+       <div id='skills' onMouseMove={debugMouse} className="window">
            <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowSkills(false); hideHoverInfo()}}
@@ -28,7 +28,6 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                <p>skills</p>
            </div>
            <div className="skills-content">
-
                <div id="skill-graphs">
                    <h2>Web Development</h2>
                    <div className="skill web">

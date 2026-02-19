@@ -53,6 +53,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                <div id="skill-graphs">
                    <h2>Web Development</h2>
                    <div className="skill web">
+
                       <div className="skill-container">
                           <p>3 years</p>
                           <div className="skill-graph" id="html">

@@ -1,5 +1,5 @@
 #skills {
-
+  height: 60vh;
   .skills-content {
     @include flex(column, flex-start, $gap: 1rem);
     width: 100%;

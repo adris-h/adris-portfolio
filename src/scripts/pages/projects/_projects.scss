@@ -1,4 +1,6 @@
 #projects {
+  height: 80vh;
+
   #projects-content{
     @include flex(column, flex-start, $gap: 2rem);
     width: 100%;
@@ -10,12 +12,20 @@
     font-size: 1vw;
 
     .project-container{
-      width: 80%;
+
       border: 1px solid rgba(255, 255, 255, 0.21);
+      border-radius: 0.6em;
       @include flex(column, $gap: 1rem);
       padding: 1rem;
       box-sizing: border-box;
 
+      .project-description{
+      }
+
+      p{
+        margin: 0;
+        text-align: left;
+      }
       h2{
         font-size: 1.2rem;
         margin: 0;
@@ -27,7 +37,7 @@
       }
       a{
         width: 100%;
-        height: 10rem;
+        aspect-ratio: 16/10;
         cursor: pointer;
 
         &[data-project="radianthq"]{
@@ -50,11 +60,11 @@
         }
 
       }
-      .stats{
-        @include flex(row, flex-start, $gap: 1rem);
+      .project-technologies{
+        @include flex(row, flex-start, $gap: 1rem, $wrap: wrap);
         width: 100%;
         span{
-          font-size: .8rem;
+          font-size: .6rem;
           border-radius: .3em;
           background: $acc-color;
           color: $text-color;
@@ -65,6 +75,16 @@
         font-size: .6rem;
       }
     }
+  }
+
+  &.fullscreen{
+    .project-container{
+      width: 50%;
+    }
+  }
+
+  .project-container{
+    width: 85%;
   }
 
 }

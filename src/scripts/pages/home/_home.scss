@@ -33,10 +33,9 @@
     border-radius: $border-radius;
 
     a{
-      font-size: 0.5em;
-
+      font-size: .8rem;
       text-decoration: none;
-      padding: 0.4em 0.6em;
+      padding: 0.4rem 0.6rem;
       border-radius: $border-radius;
 
       position: relative;
@@ -69,15 +68,14 @@
       height: 100%;
       width: 100%;
       border-radius: $border-radius;
-      font-size: 1rem;
       @include flex(column, flex-start,  flex-end, 2rem);
       h1{
-        font-size: 2.5em;
+        font-size: 3vw;
         margin: 0;
       }
 
       h2{
-        font-size: 1em;
+        font-size: .8rem;
         margin: 0;
         opacity: .4;
       }
@@ -86,7 +84,7 @@
         @include flex(column, flex-start,  flex-end);
         p{
           margin: 0;
-          font-size: 1.2em;
+          font-size: 1.8vw;
         }
       }
     }

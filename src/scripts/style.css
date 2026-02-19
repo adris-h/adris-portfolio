@@ -251,7 +251,7 @@ body {
   aspect-ratio: 5/3;
   max-width: 1000px;
   min-width: 400px;
-  padding: 0.4em;
+  padding: 0.8rem;
   border-radius: 0.3em;
   transition: 900ms scale 300ms;
 }
@@ -366,27 +366,49 @@ body {
   height: 20%;
 }
 
+#projects {
+  height: 70vh;
+}
 #projects #projects-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: nowrap;
   width: 100%;
   overflow-y: scroll;
   height: 100vh;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   font-size: 1vw;
 }
 #projects #projects-content .project-container {
   width: 80%;
-  height: 10rem;
   border: 1px solid rgba(255, 255, 255, 0.21);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 #projects #projects-content .project-container h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin: 0;
+}
+#projects #projects-content .project-container h2 i {
+  font-size: 1rem;
+  opacity: 0.2;
+}
+#projects #projects-content .project-container a {
+  width: 100%;
+  height: 10rem;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
 }
 #projects #projects-content .project-container .stats {
   display: flex;
@@ -395,12 +417,17 @@ body {
   align-items: center;
   gap: 1rem;
   flex-wrap: nowrap;
+  width: 100%;
 }
 #projects #projects-content .project-container .stats span {
+  font-size: 0.8rem;
   border-radius: 0.3em;
   background: var(--accent-color);
   color: var(--text-color);
   padding: 0.4em 0.6em;
+}
+#projects #projects-content .project-container p {
+  font-size: 0.6rem;
 }
 
 #skills .skills-content {
@@ -418,11 +445,17 @@ body {
   font-size: 0.8rem;
 }
 #skills .skills-content h2 {
-  font-size: 2em;
+  font-size: 1.5rem;
   text-align: left;
 }
 #skills .skills-content #skill-graphs {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
 }
 #skills .skills-content #skill-graphs h2 {
   text-align: center;
@@ -432,9 +465,16 @@ body {
 }
 #skills .skills-content #skill-graphs p {
   text-align: center;
+  margin: 0;
+  width: 3rem;
+  font-size: 0.6rem;
 }
 #skills .skills-content #skill-graphs p a {
   color: var(--accent-color);
+}
+#skills .skills-content #skill-graphs .skill-projects {
+  width: 100%;
+  font-size: 0.7rem;
 }
 #skills .skills-content #skill-graphs .skill {
   display: flex;
@@ -461,7 +501,7 @@ body {
   width: 60%;
   border-radius: 10em;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  height: 2rem;
+  height: 1.5rem;
   box-sizing: border-box;
   overflow: hidden;
   padding: 0.2rem;
@@ -474,7 +514,7 @@ body {
 }
 #skills .skills-content #skill-graphs .skill .skill-container .skill-graph span {
   width: 100%;
-  height: 1.6rem;
+  height: 1.2rem;
 }
 #skills .skills-content #skill-graphs .skill .skill-container .skill-graph span:first-child {
   border-bottom-left-radius: 10em;
@@ -580,12 +620,13 @@ h2 {
 
 #hoverText {
   position: absolute;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   border-radius: 0.2em;
   background: var(--accent-color);
   color: var(--text-color);
   padding: 0.4em 0.6em;
   z-index: 10000;
+  opacity: 0.5;
 }
 
 #footer {
@@ -622,6 +663,7 @@ h2 {
   flex-wrap: nowrap;
   font-size: 1rem;
   width: 100%;
+  height: 12%;
   padding: 0 1em;
   box-sizing: border-box;
 }
@@ -648,6 +690,28 @@ h2 {
 }
 .window .header p {
   color: rgba(255, 255, 255, 0.73);
+  font-size: 0.8rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent-color), 20% transparent);
 }
 
 /*# sourceMappingURL=style.css.map */

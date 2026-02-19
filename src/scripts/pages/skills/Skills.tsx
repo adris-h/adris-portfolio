@@ -90,7 +90,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                            <p>5 years</p>
                        </div>
                    </div>
-                   <p>
+                   <p className="skill-projects">
                        some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
                    </p>
                    <h2>Web Design</h2>

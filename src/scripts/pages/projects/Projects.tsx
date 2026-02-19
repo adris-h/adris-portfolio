@@ -43,17 +43,57 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                </span>
                 <p>projects</p>
             </div>
+
             <div id="projects-content">
+                {/*<div id="filter-projects">
+                    <button> design</button>
+                    <button> code</button>
+                </div>*/}
                 <div className="project-container">
-                    <h2>Project Name</h2>
-                    <a></a>
+                    <h2>Resonance <i>2025</i></h2>
+                    <a
+                        href="https://github.com/adris-h/resonance"
+                        onMouseEnter={() => displayHoverInfo("open project on github")}
+                        onMouseLeave={hideHoverInfo}
+                    ></a>
                     <span className="stats">
                         <span>Design</span>
                         <span>Code</span>
                     </span>
-                    <p>Project info</p>
+                    <p>
+                        Fully functional music mixing/equalizer app - made for school as a half year project
+                    </p>
                 </div>
-
+                <div className="project-container">
+                    <h2>Initial Portfolio <i>2025</i></h2>
+                    <a
+                        href="https://adris-h.github.io/portfolio/"
+                        onMouseEnter={() => displayHoverInfo("open project")}
+                        onMouseLeave={hideHoverInfo}
+                    ></a>
+                    <span className="stats">
+                        <span>Design</span>
+                        <span>Code</span>
+                    </span>
+                    <p>
+                        First take on a portfolio - initially made for a graded school project.
+                    </p>
+                </div>
+                <div className="project-container">
+                    <h2>Radiant HQ <i>2024</i></h2>
+                    <a
+                        href="https://adris-h.github.io/radianthq/"
+                        onMouseEnter={() => displayHoverInfo("open project")}
+                        onMouseLeave={hideHoverInfo}
+                    ></a>
+                    <span className="stats">
+                        <span>Design</span>
+                        <span>Code</span>
+                    </span>
+                    <p>
+                        Website about the game Valorant - made for graded school project
+                    </p>
+                </div>
             </div>
         </div>
         {hoverText && (

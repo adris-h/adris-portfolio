@@ -1,9 +1,23 @@
 import * as React from "react";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import Draggable from "gsap/dist/Draggable";
 
 function Projects({showProjects, setShowProjects}: ProjectsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    useEffect(() => {
+        if(showProjects){
+            Draggable.create(".window", {
+                bounds: "body",
+
+            });
+        }
+    }, [showProjects]);
+    function debugMouse(event: React.MouseEvent) {
+        //console.log(event);
+        setMousePos({x: event.pageX - 10, y: event.pageY + 25})
+
+    }
     if (!showProjects) {return null}
 
     const displayHoverInfo = (info: string) => setHoverText(info);
@@ -30,8 +44,16 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                 <p>projects</p>
             </div>
             <div id="projects-content">
-                <h2>Projects</h2>
-                <p>Here will be my projects</p>
+                <div className="project-container">
+                    <h2>Project Name</h2>
+                    <a></a>
+                    <span className="stats">
+                        <span>Design</span>
+                        <span>Code</span>
+                    </span>
+                    <p>Project info</p>
+                </div>
+
             </div>
         </div>
         {hoverText && (
@@ -41,9 +63,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
         )}
     </>;
 
-    function debugMouse(event: React.MouseEvent) {
-        setMousePos({x: event.clientX - 10, y: event.clientY + 25})
-    }
+
 }
 
 interface ProjectsProps {

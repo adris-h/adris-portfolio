@@ -3,5 +3,12 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "moduleResolution": "bundler",
+  "forceConsistentCasingInFileNames": false,
+  "compilerOptions": {
+    "paths": {
+      "gsap/Draggable": ["node_modules/gsap/Draggable.js"]
+    }
+  }
 }

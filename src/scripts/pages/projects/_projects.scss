@@ -6,6 +6,25 @@
     height: 100vh;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 1.5rem;
+
+    .project-container{
+      width: 80%;
+      height: 10rem;
+      border: 1px solid rgba(255, 255, 255, 0.21);
+
+      h2{
+        font-size: 1.5rem;
+      }
+      .stats{
+        @include flex(row, flex-start, $gap: 1rem);
+        span{
+          border-radius: .3em;
+          background: $acc-color;
+          color: $text-color;
+          padding: 0.4em 0.6em;
+        }
+      }
+    }
   }
 
 }

@@ -1,8 +1,16 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import * as React from "react";
+import Draggable from "gsap/dist/Draggable";
 function Skills({showSkills, setShowSkills}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    useEffect(() => {
+        if(showSkills){
+            Draggable.create(".window", {
+                bounds: "body"
+            });
+        }
+    }, [showSkills]);
     if (!showSkills) {return null}
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);

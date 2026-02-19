@@ -1,10 +1,17 @@
 import Skills from './../pages/skills/Skills.tsx'
 import Projects from './../pages/projects/Projects.tsx'
-import {useState} from "react";
+import {useEffect, useState} from "react";
+
+import gsap from 'gsap';
+import Draggable from 'gsap/dist/Draggable';
+gsap.registerPlugin(Draggable)
 
 function Nav() {
     const [showSkills, setShowSkills] = useState(false)
     const [showProjects, setShowProjects] = useState(false)
+
+
+
     return <>
         <nav id="nav">
             <a className="nav-link link" href="#" data-link="home">icon home</a>
@@ -16,6 +23,11 @@ function Nav() {
         <Projects showProjects={showProjects} setShowProjects={setShowProjects} />
 
     </>
+
+
 }
+
+
+
 
 export default Nav;

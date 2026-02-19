@@ -1,10 +1,13 @@
 import * as React from "react";
 import {useEffect, useState} from "react";
+import gsap from "gsap";
 import Draggable from "gsap/dist/Draggable";
+
 
 function Projects({showProjects, setShowProjects}: ProjectsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [fullscreen, setFullScreen] = useState("");
     useEffect(() => {
         if(showProjects){
             Draggable.create(".window", {
@@ -18,13 +21,25 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
         setMousePos({x: event.pageX - 10, y: event.pageY + 25})
 
     }
+
+    function makeFullScreen() {
+        if (fullscreen != "fullscreen") {
+            setFullScreen("fullscreen");
+            gsap.to(".window", {
+                x: 0,
+                y: 0
+            });
+        } else {
+            setFullScreen("");
+        }
+    }
+
     if (!showProjects) {return null}
 
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);
-
     return <>
-        <div id="projects" className="window" onMouseMove={debugMouse}>
+        <div id="projects" className={"window " + fullscreen} onMouseMove={debugMouse}>
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowProjects(false); hideHoverInfo()}}
@@ -38,7 +53,9 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                     <button id="maximize"
                             onMouseEnter={() => displayHoverInfo("maximize projects window")}
                             onMouseLeave={hideHoverInfo}
-                            onClick={() => displayHoverInfo("doesnt do anything yet")}>
+                            onClick={() => {
+                                makeFullScreen();
+                            }}>
                     </button>
                </span>
                 <p>projects</p>
@@ -52,6 +69,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                 <div className="project-container">
                     <h2>Resonance <i>2025</i></h2>
                     <a
+                        data-project="resonance"
                         href="https://github.com/adris-h/resonance"
                         onMouseEnter={() => displayHoverInfo("open project on github")}
                         onMouseLeave={hideHoverInfo}
@@ -67,6 +85,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                 <div className="project-container">
                     <h2>Initial Portfolio <i>2025</i></h2>
                     <a
+                        data-project="portfolio"
                         href="https://adris-h.github.io/portfolio/"
                         onMouseEnter={() => displayHoverInfo("open project")}
                         onMouseLeave={hideHoverInfo}
@@ -82,6 +101,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                 <div className="project-container">
                     <h2>Radiant HQ <i>2024</i></h2>
                     <a
+                        data-project="radianthq"
                         href="https://adris-h.github.io/radianthq/"
                         onMouseEnter={() => displayHoverInfo("open project")}
                         onMouseLeave={hideHoverInfo}

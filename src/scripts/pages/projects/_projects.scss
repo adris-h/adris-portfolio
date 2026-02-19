@@ -1,5 +1,4 @@
 #projects {
-  height: 70vh;
   #projects-content{
     @include flex(column, flex-start, $gap: 2rem);
     width: 100%;
@@ -29,8 +28,27 @@
       a{
         width: 100%;
         height: 10rem;
-        background: rgba(255, 255, 255, 0.05);
         cursor: pointer;
+
+        &[data-project="radianthq"]{
+          background: url("../assets/radianthq.webp");
+          background-size: contain;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+        &[data-project="portfolio"]{
+          background: url("../assets/portfolio.webp");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        &[data-project="resonance"]{
+          background: url("../assets/resonance.webp");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+
       }
       .stats{
         @include flex(row, flex-start, $gap: 1rem);

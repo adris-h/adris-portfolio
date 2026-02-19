@@ -120,10 +120,18 @@ h2{
   @include flex(column);
 
   background-color: $bg-color;
-  width: 50vw;
+
   border-radius: 0.3em;
+  width: 50vw;
   height: 60vh;
   animation: ease-in popOut 200ms;
+  transition: width 300ms, height 300ms ;
+
+  &.fullscreen{
+    width: 100vw;
+    height: 100vh;
+    transform: translate3d(0, 0, 0);
+  }
 
   .header {
     @include flex(row, space-between);

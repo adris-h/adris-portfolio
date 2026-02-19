@@ -53,7 +53,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                <div id="skill-graphs">
                    <h2>Web Development</h2>
                    <div className="skill web">
-
+                        <h3>plain HTML</h3>
                       <div className="skill-container">
                           <p>3 years</p>
                           <div className="skill-graph" id="html">
@@ -67,6 +67,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                       </div>
                    </div>
                    <div className="skill web">
+                       <h3>CSS, now I use SCSS</h3>
                        <div className="skill-container">
                            <p>3 years</p>
                            <div className="skill-graph" id="css">
@@ -80,6 +81,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                        </div>
                    </div>
                    <div className="skill web">
+                       <h3>Javascript, trying to learn typescript</h3>
                        <div className="skill-container">
                            <p>1 year</p>
                            <div className="skill-graph" id="js">
@@ -93,6 +95,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                        </div>
                    </div>
                    <div className="skill web">
+                       <h3>first time React for this portfolio </h3>
                        <div className="skill-container">
                            <p>months</p>
                            <div className="skill-graph" id="react">
@@ -110,9 +113,29 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                    </p>
                    <h2>Web Design</h2>
                    <div className="skill web">
+                       <h3>figma ♥︎ </h3>
                        <div className="skill-container">
                            <p>3 years</p>
-                           <div className="skill-graph" >
+                           <div className="skill-graph" id="figma" >
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+                   <p className="skill-projects">
+                       some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
+                   </p>
+
+                   <h2>Game Development</h2>
+                   <div className="skill ">
+                       <h3>Unity C#</h3>
+                       <div className="skill-container">
+                           <p>months</p>
+                           <div className="skill-graph" id="unity">
                                <span></span>
                                <span></span>
                                <span></span>
@@ -123,24 +146,11 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                        </div>
                    </div>
 
-                   <h2>Game Development</h2>
-                   <div className="skill ">
-                       <div className="skill-container">
-                           <p>months</p>
-                           <div className="skill-graph" >
-                               <span></span>
-                               <span></span>
-                               <span></span>
-                               <span></span>
-                               <span></span>
-                           </div>
-                           <p>5 years</p>
-                       </div>
-                   </div>
                    <div className="skill">
+                       <h3>Aseprite</h3>
                        <div className="skill-container">
                            <p>months</p>
-                           <div className="skill-graph">
+                           <div className="skill-graph" id="aseprite">
                                <span></span>
                                <span></span>
                                <span></span>
@@ -150,6 +160,9 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                            <p>5 years</p>
                        </div>
                    </div>
+                   <p className="skill-projects">
+                       some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
+                   </p>
 
                </div>
            </div>

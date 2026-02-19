@@ -460,18 +460,25 @@ body {
 #skills {
   height: 60vh;
 }
+#skills #skill-graphs {
+  width: 100%;
+}
+#skills.fullscreen #skill-graphs {
+  width: 60%;
+}
 #skills .skills-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
   flex-wrap: nowrap;
   width: 100%;
   overflow-y: scroll;
   height: 100vh;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   font-size: 0.8rem;
 }
 #skills .skills-content h2 {
@@ -479,7 +486,6 @@ body {
   text-align: left;
 }
 #skills .skills-content #skill-graphs {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -509,13 +515,18 @@ body {
 #skills .skills-content #skill-graphs .skill {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
   flex-wrap: nowrap;
   width: 100%;
 }
+#skills .skills-content #skill-graphs .skill h3 {
+  font-size: 0.7rem;
+  margin: 1rem 0 0 1rem;
+}
 #skills .skills-content #skill-graphs .skill .skill-container {
+  margin-top: 0.5rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -554,13 +565,13 @@ body {
   border-bottom-right-radius: 10em;
   border-top-right-radius: 10em;
 }
-#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(3) {
+#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(3) {
   background-color: var(--accent-color);
 }
 #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#js span:nth-child(1) {
   background-color: var(--accent-color);
 }
-#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#react span:nth-child(1) {
+#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#react span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#unity span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#aseprite span:nth-child(1) {
   background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-color) 51%, var(--accent-color) 50%, rgba(44, 20, 28, 0) 50%, rgba(45, 20, 28, 0) 51%, rgba(0, 0, 0, 0) 100%);
 }
 

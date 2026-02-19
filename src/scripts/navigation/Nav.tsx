@@ -1,6 +1,6 @@
 import Skills from './../pages/skills/Skills.tsx'
 import Projects from './../pages/projects/Projects.tsx'
-import {useEffect, useState} from "react";
+import { useState} from "react";
 
 import gsap from 'gsap';
 import Draggable from 'gsap/dist/Draggable';

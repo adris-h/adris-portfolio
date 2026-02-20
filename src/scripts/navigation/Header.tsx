@@ -35,7 +35,7 @@ function Header() {
     return <>
         <header id="header">
             <span id="header_left">
-                <a href="/" className="header-link link" >icon logo</a>
+                <a href="/" className="header-link link" >adris</a>
                 <a className="header-link link" data-mode="light"></a>
             </span>
             <a className="header-link link" data-link="cz" onClick={toggleMenu}></a>

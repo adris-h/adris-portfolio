@@ -50,6 +50,8 @@ body{
 
 @import "pages/skills/skills";
 
+@import "pages/aboutme/aboutme";
+
 #main-section {
   height: 70vh;
   width: calc(100% - var(--nav-width));
@@ -128,15 +130,12 @@ h2{
   transition: width 300ms, height 300ms ;
 
   &.fullscreen{
-    &#projects{
+    &#projects, &#about, &#skills, &#friends{
       height: 100vh;
       width: 100vw;
     }
 
-    &#skills{
-      height: 100vh;
-      width: 100vw;
-    }
+
   }
 
   .header {
@@ -146,6 +145,7 @@ h2{
     height: 12%;
     padding: 0 1em;
     box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
     button{
       border-radius: 100%;
@@ -154,6 +154,10 @@ h2{
 
       border: none;
       cursor: pointer;
+
+      &:active{
+        transform: scale(.9);
+      }
 
       &#close{
         background-color: $acc-color;

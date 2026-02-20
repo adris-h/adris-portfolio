@@ -379,7 +379,6 @@ body {
   width: 100%;
   overflow-y: scroll;
   height: 100vh;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-size: 1vw;
@@ -476,7 +475,6 @@ body {
   width: 100%;
   overflow-y: scroll;
   height: 100vh;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-size: 0.8rem;
@@ -580,6 +578,20 @@ body {
     transform: scale(1.05);
   }
 }
+#about {
+  height: 70vh;
+}
+#about-content {
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 0.8rem 1rem;
+  box-sizing: border-box;
+}
+#about-content p {
+  font-size: 0.8rem;
+}
+
 #main-section {
   height: 70vh;
   width: calc(100% - var(--nav-width));
@@ -694,11 +706,7 @@ h2 {
   animation: ease-in popOut 200ms;
   transition: width 300ms, height 300ms;
 }
-.window.fullscreen#projects {
-  height: 100vh;
-  width: 100vw;
-}
-.window.fullscreen#skills {
+.window.fullscreen#projects, .window.fullscreen#about, .window.fullscreen#skills, .window.fullscreen#friends {
   height: 100vh;
   width: 100vw;
 }
@@ -714,6 +722,7 @@ h2 {
   height: 12%;
   padding: 0 1em;
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .window .header button {
   border-radius: 100%;
@@ -721,6 +730,9 @@ h2 {
   aspect-ratio: 1/1;
   border: none;
   cursor: pointer;
+}
+.window .header button:active {
+  transform: scale(0.9);
 }
 .window .header button#close {
   background-color: var(--accent-color);

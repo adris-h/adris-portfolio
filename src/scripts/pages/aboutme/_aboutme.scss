@@ -1,0 +1,15 @@
+#about{
+  height: 70vh;
+  &-content{
+    width: 100%;
+    overflow-y: scroll;
+    height: 100vh;
+
+    padding:  .8rem 1rem;
+    box-sizing: border-box;
+
+    p{
+      font-size: .8rem;
+    }
+  }
+}

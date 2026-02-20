@@ -4,7 +4,6 @@ import { useRef, useEffect } from 'react';
 function Home() {
 
     const cardRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         const card = cardRef.current;
         if (!card) return;

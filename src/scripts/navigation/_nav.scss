@@ -2,21 +2,60 @@
 
   width: 100%;
   height: 20vh;
-  @include flex(row, center, center, 1rem);
+  @include flex(row, center, center, .5rem);
 
   font-size: 1rem;
 
   .nav-link{
     width: 8%;
-    height: 80%;
+    height: fit-content;
     //border: 1px solid white;
+    @include flex(column, center, center);
+
+    .img{
+      width: 100%;
+      height: 4rem;
+    }
+
+    .name{
+      font-size: .6rem;
+      display: none;
+    }
 
     opacity: .9;
     &[data-link="projects"]{
-      background-image: url("../assets/folder.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 80%;
+      .img{
+        background-image: url("../assets/folder.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+      }
+    }
+
+    &[data-link="friends"]{
+      .img{
+        background-image: url("../assets/friends.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+      }
+    }
+
+    &[data-link="skills"]{
+      .img{
+        background-image: url("../assets/skills.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+      }
+    }
+    &[data-link="about-me"]{
+      .img{
+        background-image: url("../assets/aboutme.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+      }
     }
 
     &:hover{

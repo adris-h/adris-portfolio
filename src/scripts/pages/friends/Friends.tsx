@@ -51,7 +51,7 @@ function About({showFriends, setShowFriends}: SkillsProps) {
             </div>
             <div id="about-content">
                 <p>
-                    I have friends
+                    All the icons were made by my friend and an awesome artist <a href="">Asphinal</a>
                 </p>
 
 

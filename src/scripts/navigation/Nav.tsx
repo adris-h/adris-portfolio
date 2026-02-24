@@ -13,13 +13,42 @@ function Nav() {
     const [showProjects, setShowProjects] = useState(false)
     const [showAbout, setShowAbout] = useState(false)
     const [showFriends, setShowFriends] = useState(false)
+    const [hoverText, setHoverText] = useState<string | null>(null);
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+    const displayHoverInfo = (info: string) => setHoverText(info);
+    const hideHoverInfo = () => setHoverText(null);
 
     return <>
-        <nav id="nav">
-            <a className="nav-link link" href="#" data-link="about-me" onClick={() => setShowAbout(true)}> about me</a>
-            <a className="nav-link link" href="#" data-link="skills" onClick={()=>setShowSkills(true)}> skills</a>
-            <a className="nav-link link" href="#" data-link="projects" onClick={() => setShowProjects(true)} ></a>
-            <a className="nav-link link" href="#" data-link="friends" onClick={() => setShowFriends(true)}> friends</a>
+        <nav id="nav" onMouseMove={debugMouse}>
+            <a className="nav-link link" href="#" data-link="about-me" onClick={() => setShowAbout(true)}
+               onMouseEnter={() => displayHoverInfo("about me")}
+               onMouseLeave={hideHoverInfo}
+            >
+                <span className="img"></span>
+                <span className="name">about me</span>
+            </a>
+            <a className="nav-link link" href="#" data-link="skills" onClick={()=>setShowSkills(true)}
+               onMouseEnter={() => displayHoverInfo("skills")}
+               onMouseLeave={hideHoverInfo}
+            >
+                <span className="img"></span>
+                <span className="name">skills</span>
+            </a>
+            <a className="nav-link link" href="#" data-link="projects" onClick={() => setShowProjects(true)}
+               onMouseEnter={() => displayHoverInfo("projects")}
+               onMouseLeave={hideHoverInfo}
+            >
+                <span className="img"></span>
+                <span className="name">projects</span>
+            </a>
+            <a className="nav-link link" href="#" data-link="friends" onClick={() => setShowFriends(true)}
+               onMouseEnter={() => displayHoverInfo("friends")}
+               onMouseLeave={hideHoverInfo}
+            >
+                <span className="img"></span>
+                <span className="name">friends</span>
+            </a>
         </nav>
 
         <Skills showSkills={showSkills} setShowSkills={setShowSkills} />
@@ -27,9 +56,17 @@ function Nav() {
         <About showAbout={showAbout} setShowAbout={setShowAbout} />
         <Friends showFriends={showFriends} setShowFriends={setShowFriends} />
 
+        {hoverText && (
+            <div id="hoverText" style={{ left: mousePos.x, top: mousePos.y }}>
+                {hoverText}
+            </div>
+        )}
+
     </>
 
-
+    function debugMouse(event: React.MouseEvent) {
+        setMousePos({x: event.clientX - 10, y: event.clientY + 25})
+    }
 }
 
 

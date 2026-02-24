@@ -51,17 +51,49 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: nowrap;
   font-size: 1rem;
 }
 #nav .nav-link {
   width: 8%;
-  height: 80%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
   opacity: 0.9;
 }
-#nav .nav-link[data-link=projects] {
+#nav .nav-link .img {
+  width: 100%;
+  height: 4rem;
+}
+#nav .nav-link .name {
+  font-size: 0.6rem;
+  display: none;
+}
+#nav .nav-link[data-link=projects] .img {
   background-image: url("../assets/folder.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+#nav .nav-link[data-link=friends] .img {
+  background-image: url("../assets/friends.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+#nav .nav-link[data-link=skills] .img {
+  background-image: url("../assets/skills.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+#nav .nav-link[data-link=about-me] .img {
+  background-image: url("../assets/aboutme.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;

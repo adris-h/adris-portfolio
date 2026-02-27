@@ -11,7 +11,7 @@
 }
 
 #root {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
@@ -23,9 +23,9 @@ html {
     font-size: 2vw;
   }
 }
-@media (orientation: landscape) and (max-width: 1024px) {
+@media only screen and (max-width: 760px) {
   html {
-    font-size: 1.5vw;
+    font-size: 4vw;
   }
 }
 
@@ -40,7 +40,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
@@ -58,7 +58,11 @@ body {
   align-items: center;
   gap: 0.5rem;
   flex-wrap: nowrap;
-  font-size: 1rem;
+}
+@media only screen and (max-width: 760px) {
+  #nav {
+    height: 12vh;
+  }
 }
 #nav .nav-link {
   width: 8%;
@@ -70,6 +74,11 @@ body {
   gap: 0;
   flex-wrap: nowrap;
   opacity: 0.9;
+}
+@media only screen and (max-width: 760px) {
+  #nav .nav-link {
+    width: 15%;
+  }
 }
 #nav .nav-link .img {
   width: 100%;
@@ -290,6 +299,11 @@ body {
   border-radius: 0.3em;
   transition: 900ms scale 300ms;
 }
+@media only screen and (max-width: 760px) {
+  #card {
+    width: 80vw;
+  }
+}
 #card:hover {
   transform: scale(1.05);
 }
@@ -376,7 +390,7 @@ body {
   flex-wrap: nowrap;
 }
 #card_main-content .bio h1 {
-  font-size: 3vw;
+  font-size: 2rem;
   margin: 0;
 }
 #card_main-content .bio h2 {
@@ -394,7 +408,7 @@ body {
 }
 #card_main-content .bio span:nth-child(2) p {
   margin: 0;
-  font-size: 1.8vw;
+  font-size: 0.8rem;
 }
 #card_socials {
   width: 100%;
@@ -636,6 +650,17 @@ body {
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
+}
+@media only screen and (max-width: 760px) {
+  #main-section {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
 }
 
 h2 {

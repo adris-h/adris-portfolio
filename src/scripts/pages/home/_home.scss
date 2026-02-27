@@ -10,6 +10,10 @@
   width: 40vw;
   aspect-ratio: 5/3;
 
+  @include responsive(mobile){
+    width: 80vw;
+  }
+
   padding: 0.8rem;
   $border-radius: 0.2em;
   $transperent-border: color-mix(in srgb, $text-color 50%, transparent);
@@ -68,7 +72,7 @@
       border-radius: $border-radius;
       @include flex(column, flex-start,  flex-end, 2rem);
       h1{
-        font-size: 3vw;
+        font-size: 2rem;
         margin: 0;
       }
 
@@ -82,7 +86,7 @@
         @include flex(column, flex-start,  flex-end);
         p{
           margin: 0;
-          font-size: 1.8vw;
+          font-size: .8rem;
         }
       }
     }

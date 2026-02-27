@@ -109,7 +109,9 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                        </div>
                    </div>
                    <p className="skill-projects">
-                       some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
+                       some projects to checkout -
+                       <a> Resonance</a>
+                       {/*,<a href="#">in progress</a>*/}
                    </p>
                    <h2>Web Design</h2>
                    <div className="skill web">
@@ -127,7 +129,9 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                        </div>
                    </div>
                    <p className="skill-projects">
-                       some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
+                       some projects to checkout -
+                       <a>RadiantHQ </a>,
+                       <a> Lucidify</a>
                    </p>
 
                    <h2>Game Development</h2>
@@ -161,7 +165,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                        </div>
                    </div>
                    <p className="skill-projects">
-                       some projects to checkout - <a href="#">project</a>, <a href="#">project</a>
+                       some projects to checkout - <a>Guardians Of The Galaxy</a>
                    </p>
 
                </div>

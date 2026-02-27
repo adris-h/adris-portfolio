@@ -13,7 +13,6 @@ function Header() {
         target.classList.add('active');
         const language = target.dataset.lang;
         console.log(language);
-        // setIsMenuOpen(false);
     }
 
     function closeMenu() {
@@ -46,10 +45,7 @@ function Header() {
                 </div>
             )}
         </header>
-
-
     </>
 }
-
 
 export default Header;

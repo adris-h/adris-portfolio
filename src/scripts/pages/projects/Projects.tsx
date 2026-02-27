@@ -12,7 +12,6 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
         if(showProjects){
             Draggable.create(".window", {
                 bounds: "body",
-
             });
         }
     }, [showProjects]);
@@ -74,6 +73,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                     </p>
                     <a
                         data-project="resonance"
+                        target="_blank"
                         href="https://github.com/adris-h/resonance"
                         onMouseEnter={() => displayHoverInfo("open project on github")}
                         onMouseLeave={hideHoverInfo}
@@ -97,6 +97,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                     </p>
                     <a
                         data-project="portfolio"
+                        target="_blank"
                         href="https://adris-h.github.io/portfolio/"
                         onMouseEnter={() => displayHoverInfo("open project")}
                         onMouseLeave={hideHoverInfo}
@@ -117,6 +118,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
                     </p>
                     <a
                         data-project="radianthq"
+                        target="_blank"
                         href="https://adris-h.github.io/radianthq/"
                         onMouseEnter={() => displayHoverInfo("open project")}
                         onMouseLeave={hideHoverInfo}

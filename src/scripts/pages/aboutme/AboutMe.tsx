@@ -52,8 +52,9 @@ function About({showAbout, setShowAbout}: SkillsProps) {
                 <p>about me</p>
             </div>
             <div id="about-content">
+                <h2>About Adris</h2>
                 <p>
-                   Hi, I'm Adris,  eighteen year old student at <a target="_blank" href="https://creativehill.cz/">CHC</a> from Czechia.
+                   Eighteen year old student from Czech Republic.
                 </p>
 
 

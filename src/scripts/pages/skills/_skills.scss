@@ -105,15 +105,15 @@
               }
             }
 
-            &#html, &#css, &#figma {
+            &#html, &#css {
               span {
-                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                &:nth-child(1), &:nth-child(2) {
                   background-color: $acc-color;
                 }
               }
             }
 
-            &#js {
+            &#js, &#figma {
               span:nth-child(1) {
                 background-color: $acc-color;
               }

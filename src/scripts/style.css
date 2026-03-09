@@ -622,10 +622,10 @@ body {
   border-bottom-right-radius: 10em;
   border-top-right-radius: 10em;
 }
-#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(3) {
+#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(2) {
   background-color: var(--accent-color);
 }
-#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#js span:nth-child(1) {
+#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#js span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(1) {
   background-color: var(--accent-color);
 }
 #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#react span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#unity span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#aseprite span:nth-child(1) {
@@ -665,6 +665,7 @@ body {
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
+  padding-top: 10vh;
 }
 @media only screen and (max-width: 760px) {
   #main-section {
@@ -776,6 +777,7 @@ h2 {
   gap: 0;
   flex-wrap: nowrap;
   background-color: var(--bg-color);
+  box-sizing: border-box;
   border-radius: 0.3em;
   width: 50vw;
   animation: ease-in popOut 200ms;
@@ -785,6 +787,7 @@ h2 {
   .window {
     width: 100vw;
     height: 100vh;
+    padding-bottom: 10vh;
   }
 }
 .window.fullscreen#projects, .window.fullscreen#about, .window.fullscreen#skills, .window.fullscreen#friends {
@@ -804,6 +807,11 @@ h2 {
   padding: 0 1em;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+@media only screen and (max-width: 760px) {
+  .window .header {
+    height: 10%;
+  }
 }
 .window .header button {
   border-radius: 100%;

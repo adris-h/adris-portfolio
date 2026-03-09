@@ -61,6 +61,7 @@ body{
   height: 70vh;
   width: calc(100% - var(--nav-width));
   @include flex(column);
+  padding-top: 10vh;
 
   @include responsive(mobile){
     height: 50vh;
@@ -132,6 +133,7 @@ h2{
   @include flex(column);
 
   background-color: $bg-color;
+  box-sizing: border-box;
 
   border-radius: 0.3em;
   width: 50vw;
@@ -139,6 +141,9 @@ h2{
   @include responsive(mobile){
     width: 100vw;
     height: 100vh;
+
+    padding-bottom: 10vh;
+
   }
 
   animation: ease-in popOut 200ms;
@@ -161,6 +166,10 @@ h2{
     padding: 0 1em;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    @include responsive(mobile){
+      height: 10%;
+    }
 
     button{
       border-radius: 100%;

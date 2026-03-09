@@ -57,7 +57,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                    <div className="skill web">
                         <h3>plain HTML</h3>
                       <div className="skill-container">
-                          <p>3 years</p>
+                          <p>2 years</p>
                           <div className="skill-graph" id="html">
                               <span></span>
                               <span></span>
@@ -71,7 +71,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                    <div className="skill web">
                        <h3>CSS, now I use SCSS</h3>
                        <div className="skill-container">
-                           <p>3 years</p>
+                           <p>2 years</p>
                            <div className="skill-graph" id="css">
                                <span></span>
                                <span></span>
@@ -119,7 +119,7 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
                    <div className="skill web">
                        <h3>figma ♥︎ </h3>
                        <div className="skill-container">
-                           <p>3 years</p>
+                           <p>1 year</p>
                            <div className="skill-graph" id="figma" >
                                <span></span>
                                <span></span>

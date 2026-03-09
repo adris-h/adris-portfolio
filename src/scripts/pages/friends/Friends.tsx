@@ -52,7 +52,7 @@ function About({showFriends, setShowFriends}: SkillsProps) {
             </div>
             <div id="about-content">
                 <p>
-                    All the icons were made by my friend and an awesome artist <a href="">Asphinal</a>
+                    All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank">Asphinal</a>
                 </p>
 
 

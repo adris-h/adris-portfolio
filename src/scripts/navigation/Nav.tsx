@@ -15,6 +15,7 @@ function Nav() {
     const [showFriends, setShowFriends] = useState(false)
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const isMobile: boolean = window.innerWidth < 768;
 
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);
@@ -56,7 +57,7 @@ function Nav() {
         <About showAbout={showAbout} setShowAbout={setShowAbout} />
         <Friends showFriends={showFriends} setShowFriends={setShowFriends} />
 
-        {hoverText && (
+        {hoverText && !isMobile && (
             <div id="hoverText" style={{ left: mousePos.x, top: mousePos.y }}>
                 {hoverText}
             </div>

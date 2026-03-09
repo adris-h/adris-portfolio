@@ -8,8 +8,9 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
+    const isMobile: boolean = window.innerWidth < 768;
     useEffect(() => {
-        if(showProjects){
+        if(showProjects && !isMobile){
             Draggable.create(".window", {
                 bounds: "body",
             });
@@ -22,6 +23,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
     }
 
     function makeFullScreen() {
+        if (isMobile) return;
         if (fullscreen != "fullscreen") {
             setFullScreen("fullscreen");
             gsap.to(".window", {

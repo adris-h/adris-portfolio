@@ -390,7 +390,7 @@ body {
   flex-wrap: nowrap;
 }
 #card_main-content .bio h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 #card_main-content .bio h2 {
@@ -417,6 +417,11 @@ body {
 
 #projects {
   height: 80vh;
+}
+@media only screen and (max-width: 760px) {
+  #projects {
+    height: 100vh;
+  }
 }
 #projects #projects-content {
   display: flex;
@@ -507,6 +512,11 @@ body {
 
 #skills {
   height: 60vh;
+}
+@media only screen and (max-width: 760px) {
+  #skills {
+    height: 100vh;
+  }
 }
 #skills #skill-graphs {
   width: 100%;
@@ -629,6 +639,11 @@ body {
 }
 #about {
   height: 70vh;
+}
+@media only screen and (max-width: 760px) {
+  #about {
+    height: 100vh;
+  }
 }
 #about-content {
   width: 100%;
@@ -765,6 +780,12 @@ h2 {
   width: 50vw;
   animation: ease-in popOut 200ms;
   transition: width 300ms, height 300ms;
+}
+@media only screen and (max-width: 760px) {
+  .window {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 .window.fullscreen#projects, .window.fullscreen#about, .window.fullscreen#skills, .window.fullscreen#friends {
   height: 100vh;

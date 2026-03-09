@@ -6,8 +6,10 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
+    const isMobile: boolean = window.innerWidth < 768;
+
     useEffect(() => {
-        if(showSkills){
+        if(showSkills  && !isMobile){
             Draggable.create(".window", {
                 bounds: "body"
             });

@@ -1,6 +1,11 @@
 #skills {
   height: 60vh;
 
+  @include responsive(mobile){
+    height: 100vh;
+  }
+
+
   #skill-graphs {
     width: 100%;
   }

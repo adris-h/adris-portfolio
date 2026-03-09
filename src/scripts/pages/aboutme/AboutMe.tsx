@@ -6,8 +6,9 @@ function About({showAbout, setShowAbout}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
+    const isMobile: boolean = window.innerWidth < 768;
     useEffect(() => {
-        if(showAbout){
+        if(showAbout && !isMobile){
             Draggable.create(".window", {
                 bounds: "body"
             });
@@ -18,6 +19,7 @@ function About({showAbout, setShowAbout}: SkillsProps) {
     const hideHoverInfo = () => setHoverText(null);
 
     function makeFullScreen() {
+        if(isMobile)return;
         if (fullscreen != "fullscreen") {
             setFullScreen("fullscreen");
             gsap.to(".window", {

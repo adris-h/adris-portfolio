@@ -1,5 +1,9 @@
 #about{
   height: 70vh;
+  @include responsive(mobile){
+    height: 100vh;
+  }
+
   &-content{
     width: 100%;
     overflow-y: scroll;

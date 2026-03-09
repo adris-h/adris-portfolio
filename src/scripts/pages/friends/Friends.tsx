@@ -6,8 +6,9 @@ function About({showFriends, setShowFriends}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
+    const isMobile = window.innerWidth < 768;
     useEffect(() => {
-        if(showFriends){
+        if(showFriends  && !isMobile){
             Draggable.create(".window", {
                 bounds: "body"
             });

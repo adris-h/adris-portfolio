@@ -136,6 +136,11 @@ h2{
   border-radius: 0.3em;
   width: 50vw;
 
+  @include responsive(mobile){
+    width: 100vw;
+    height: 100vh;
+  }
+
   animation: ease-in popOut 200ms;
   transition: width 300ms, height 300ms ;
 

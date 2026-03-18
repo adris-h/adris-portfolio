@@ -17,33 +17,62 @@ function Nav() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const isMobile: boolean = window.innerWidth < 768;
 
+    const [globalZIndex, setGlobalZIndex] = useState(100);
+
+    const [activeZIndexes, setActiveZIndexes] = useState({
+        about: 100,
+        friends: 100,
+        skills: 100,
+        projects: 100
+    });
+
+    function bringToFront(window: string) {
+        setGlobalZIndex(prev => {
+            const newZIndex = prev + 1;
+            setActiveZIndexes(indexes => ({ ...indexes, [window]: newZIndex }));
+            return newZIndex;
+        })
+    }
+
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);
 
     return <>
         <nav id="nav" onMouseMove={debugMouse}>
-            <a className="nav-link link" href="#" data-link="about-me" onClick={() => setShowAbout(true)}
+            <a className="nav-link link" href="#" data-link="about-me" onClick={() => {
+                setShowAbout(true)
+                bringToFront("about")
+            }}
                onMouseEnter={() => displayHoverInfo("about me")}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>
                 <span className="name">about me</span>
             </a>
-            <a className="nav-link link" href="#" data-link="skills" onClick={()=>setShowSkills(true)}
+            <a className="nav-link link" href="#" data-link="skills" onClick={()=> {
+                setShowSkills(true)
+                bringToFront("skills")
+            }}
                onMouseEnter={() => displayHoverInfo("skills")}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>
                 <span className="name">skills</span>
             </a>
-            <a className="nav-link link" href="#" data-link="projects" onClick={() => setShowProjects(true)}
+            <a className="nav-link link" href="#" data-link="projects" onClick={() => {
+                setShowProjects(true)
+                bringToFront("projects")
+            }}
                onMouseEnter={() => displayHoverInfo("projects")}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>
                 <span className="name">projects</span>
             </a>
-            <a className="nav-link link" href="#" data-link="friends" onClick={() => setShowFriends(true)}
+            <a className="nav-link link" href="#" data-link="friends" onClick={() => {
+                setShowFriends(true)
+                bringToFront("friends")
+            }}
                onMouseEnter={() => displayHoverInfo("friends")}
                onMouseLeave={hideHoverInfo}
             >
@@ -52,10 +81,18 @@ function Nav() {
             </a>
         </nav>
 
-        <Skills showSkills={showSkills} setShowSkills={setShowSkills} />
-        <Projects showProjects={showProjects} setShowProjects={setShowProjects} />
-        <About showAbout={showAbout} setShowAbout={setShowAbout} />
-        <Friends showFriends={showFriends} setShowFriends={setShowFriends} />
+        <Skills showSkills={showSkills}
+                setShowSkills={setShowSkills}
+                zIndex={activeZIndexes.skills}
+        />
+        <Projects showProjects={showProjects} setShowProjects={setShowProjects}
+                  zIndex={activeZIndexes.projects}
+        />
+        <About showAbout={showAbout} setShowAbout={setShowAbout}
+        zIndex={activeZIndexes.about}
+        />
+        <Friends showFriends={showFriends} setShowFriends={setShowFriends}
+                 zIndex={activeZIndexes.friends}/>
 
         {hoverText && !isMobile && (
             <div id="hoverText" style={{ left: mousePos.x, top: mousePos.y }}>

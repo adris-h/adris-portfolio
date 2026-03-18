@@ -4,7 +4,7 @@ import gsap from "gsap";
 import Draggable from "gsap/dist/Draggable";
 
 
-function Projects({showProjects, setShowProjects}: ProjectsProps) {
+function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
@@ -40,7 +40,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);
     return <>
-        <div id="projects" className={"window " + fullscreen} onMouseMove={debugMouse}>
+        <div id="projects" className={"window " + fullscreen} onMouseMove={debugMouse} style={{zIndex: zIndex}}>
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowProjects(false); hideHoverInfo()}}
@@ -148,6 +148,7 @@ function Projects({showProjects, setShowProjects}: ProjectsProps) {
 interface ProjectsProps {
     showProjects: boolean;
     setShowProjects: (showProjects: boolean) => void;
+    zIndex: number;
 }
 
 export default Projects;

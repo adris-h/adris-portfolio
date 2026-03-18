@@ -4,16 +4,152 @@
     height: 100vh;
   }
 
+  &.fullscreen{
+    #about-content{
+      padding: 4em 10em;
+    }
+  }
+
   &-content{
     width: 100%;
     overflow-y: scroll;
     height: 100vh;
-
     padding:  .8rem 1rem;
     box-sizing: border-box;
+    @include flex(column, flex-start, center, $gap: 1rem);
 
     p{
       font-size: .8rem;
+      margin: 0;
+    }
+
+    .content{
+      @include flex(column, center);
+      width: 100%;
+      hr{
+        width: 100%;
+        height: 1px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid rgba(221, 221, 221, 0.1);
+      }
+
+      & > div{
+        @include flex(column, center, flex-start, $gap: 1rem);
+        width: 100%;
+
+        h3{
+          margin: 0;
+          position: relative;
+          text-align: left;
+          &:before{
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: 0;
+            height: 1px;
+            border-bottom: 3px solid $acc-color;
+            border-radius: 5px;
+            width: 100%;
+          }
+        }
+
+        ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li{
+            font-size: .8rem;
+          }
+        }
+
+        &#studies{
+          ul{
+            & > p{
+              color: rgba(255, 255, 255, 0.2);
+            }
+            a{
+              border: 1px solid rgba(255, 255, 255, 0.05);
+              border-radius: 12px;
+              padding: .5rem 1rem;
+              width: 100%;
+              box-sizing: border-box;
+              height: 5rem;
+              margin-top: 0.2rem;
+              transition: 100ms;
+              cursor: pointer;
+              color: $text-color;
+              text-decoration: none;
+
+              @include flex(row, center, center, $gap: 2rem);
+
+              #chc-logo{
+                background-image: url("/src/assets/chc2.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 50%;
+                height: 80%;
+              }
+
+              &:hover{
+                transform: scale(1.04);
+
+              }
+            }
+          }
+        }
+
+        &#principles{
+          ul{
+            @include flex(row, flex-start, flex-start, $gap: 0.3rem, $wrap: wrap);
+            li{
+              border: 1px solid rgba(255, 255, 255, 0.05);
+              border-radius: 12px;
+              padding: .5rem 1rem;
+              width: 40%;
+              height: 50%;
+
+              h4{
+                font-size: 1.2em;
+              }
+            }
+            p, h4{
+              margin: 0;
+            }
+          }
+        }
+      }
+
+    }
+
+    .profile {
+      @include flex(center, center, $gap: 1rem);
+      width: 100%;
+      height: fit-content;
+
+
+      &-picture{
+        aspect-ratio: 1 / 1;
+        width: 60%;
+        max-width: 300px;
+        background: url("src/assets/avata-redr.webp") ;
+        background-size: cover;
+        border-radius: 5%;
+      }
+
+      &-bio{
+        height: 100%;
+        .occupation{
+          color: #636262;
+        }
+        h2{
+          margin: 0;
+        }
+        width: 100%;
+        @include flex(column, flex-start, flex-start);
+      }
     }
   }
 }

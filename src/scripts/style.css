@@ -40,13 +40,18 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
   font-family: "argent-pixel-cf", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+@media only screen and (max-width: 760px) {
+  body {
+    justify-content: flex-start;
+  }
 }
 
 #nav {
@@ -131,6 +136,7 @@ body {
   gap: 1rem;
   flex-wrap: nowrap;
   font-size: 1rem;
+  padding: 0 2rem 0 0;
 }
 #header_left {
   display: flex;
@@ -140,6 +146,19 @@ body {
   gap: 1rem;
   flex-wrap: nowrap;
   height: 100%;
+}
+#header .header-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.4rem;
+  flex-wrap: nowrap;
+  font-size: 0.8rem;
+}
+#header .header-date span {
+  font-size: 0.8em;
+  color: #3d3838;
 }
 #header .header-link {
   height: 100%;
@@ -316,12 +335,19 @@ body {
   gap: 0.3em;
   flex-wrap: nowrap;
   border-radius: 0.2em;
+  height: 6em;
 }
 #card_socials a {
   font-size: 0.8rem;
   text-decoration: none;
   padding: 0.4rem 0.6rem;
   border-radius: 0.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
   position: relative;
   cursor: pointer;
   color: red;
@@ -358,6 +384,13 @@ body {
 }
 #card_socials a:hover:after {
   width: 100%;
+}
+#card_socials a span {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-image: url("/src/assets/link-symbol.png");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #card_main-content {
   width: 100%;
@@ -645,15 +678,230 @@ body {
     height: 100vh;
   }
 }
+#about.fullscreen #about-content {
+  padding: 4em 10em;
+}
 #about-content {
   width: 100%;
   overflow-y: scroll;
   height: 100vh;
   padding: 0.8rem 1rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 #about-content p {
   font-size: 0.8rem;
+  margin: 0;
+}
+#about-content .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+#about-content .content hr {
+  width: 100%;
+  height: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(221, 221, 221, 0.1);
+}
+#about-content .content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+#about-content .content > div h3 {
+  margin: 0;
+  position: relative;
+  text-align: left;
+}
+#about-content .content > div h3:before {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  height: 1px;
+  border-bottom: 3px solid var(--accent-color);
+  border-radius: 5px;
+  width: 100%;
+}
+#about-content .content > div ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#about-content .content > div ul li {
+  font-size: 0.8rem;
+}
+#about-content .content > div#studies ul > p {
+  color: rgba(255, 255, 255, 0.2);
+}
+#about-content .content > div#studies ul a {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  height: 5rem;
+  margin-top: 0.2rem;
+  transition: 100ms;
+  cursor: pointer;
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+#about-content .content > div#studies ul a #chc-logo {
+  background-image: url("/src/assets/chc2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 80%;
+}
+#about-content .content > div#studies ul a:hover {
+  transform: scale(1.04);
+}
+#about-content .content > div#principles ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+#about-content .content > div#principles ul li {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  width: 40%;
+  height: 50%;
+}
+#about-content .content > div#principles ul li h4 {
+  font-size: 1.2em;
+}
+#about-content .content > div#principles ul p, #about-content .content > div#principles ul h4 {
+  margin: 0;
+}
+#about-content .profile {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: fit-content;
+}
+#about-content .profile-picture {
+  aspect-ratio: 1/1;
+  width: 60%;
+  max-width: 300px;
+  background: url("src/assets/avata-redr.webp");
+  background-size: cover;
+  border-radius: 5%;
+}
+#about-content .profile-bio {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+#about-content .profile-bio .occupation {
+  color: #636262;
+}
+#about-content .profile-bio h2 {
+  margin: 0;
+}
+
+#friends {
+  height: 50vh;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 760px) {
+  #friends {
+    height: 100vh;
+  }
+}
+#friends #friends-content {
+  width: 100%;
+  height: 300vh;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+}
+#friends #friends-content a {
+  width: 12%;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+#friends #friends-content a[data-friend=oskar]:before {
+  content: "hello im oskar";
+}
+#friends #friends-content a[data-friend=maty]:before {
+  content: "hello im maty";
+}
+#friends #friends-content a[data-friend=alex]:before {
+  content: "hello im alex";
+}
+#friends #friends-content a[data-friend=kiki]:before {
+  content: "hello im krystof";
+}
+#friends #friends-content a:before {
+  position: absolute;
+  background-color: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.2rem 0.3rem;
+  top: 0;
+  left: -80%;
+  opacity: 0;
+  font-size: 0.6rem;
+}
+#friends #friends-content a:hover:before {
+  opacity: 1;
+  animation: popOut 0.2s;
+}
+#friends #friends-content a div {
+  background: var(--accent-color);
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+#friends #friends-content a p {
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+#friends > p {
+  font-size: 0.8rem;
+  margin: 0 3rem;
 }
 
 #main-section {
@@ -665,7 +913,6 @@ body {
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
-  padding-top: 10vh;
 }
 @media only screen and (max-width: 760px) {
   #main-section {
@@ -790,6 +1037,9 @@ h2 {
     padding-bottom: 10vh;
   }
 }
+.window > div:nth-child(2) {
+  cursor: default;
+}
 .window.fullscreen#projects, .window.fullscreen#about, .window.fullscreen#skills, .window.fullscreen#friends {
   height: 100vh;
   width: 100vw;
@@ -803,14 +1053,14 @@ h2 {
   flex-wrap: nowrap;
   font-size: 1rem;
   width: 100%;
-  height: 12%;
+  height: 8vh;
   padding: 0 1em;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 @media only screen and (max-width: 760px) {
   .window .header {
-    height: 10%;
+    height: 12vh;
   }
 }
 .window .header button {

@@ -2,11 +2,13 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
-function Skills({showSkills, setShowSkills}: SkillsProps) {
+function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
+
     const isMobile: boolean = window.innerWidth < 768;
+
 
     useEffect(() => {
         if(showSkills  && !isMobile){
@@ -31,8 +33,11 @@ function Skills({showSkills, setShowSkills}: SkillsProps) {
         }
     }
 
+    // make the biggest z index on pop up
+
+
     return <>
-       <div id='skills' onMouseMove={debugMouse} className={"window " + fullscreen}>
+       <div id='skills' onMouseMove={debugMouse} className={"window " + fullscreen} style={{zIndex: zIndex}}>
            <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowSkills(false); hideHoverInfo()}}
@@ -189,4 +194,5 @@ export default Skills;
 interface SkillsProps {
     showSkills: boolean,
     setShowSkills: (showSkills: boolean) => void,
+    zIndex: number;
 }

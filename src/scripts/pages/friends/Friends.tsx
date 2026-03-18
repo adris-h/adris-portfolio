@@ -2,15 +2,20 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
-function About({showFriends, setShowFriends}: SkillsProps) {
+function Friends({showFriends, setShowFriends, zIndex}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile = window.innerWidth < 768;
+
     useEffect(() => {
         if(showFriends  && !isMobile){
             Draggable.create(".window", {
                 bounds: "body"
+            });
+            gsap.to(".window", {
+                x: 0,
+                y: 0
             });
         }
     }, [showFriends]);
@@ -31,11 +36,13 @@ function About({showFriends, setShowFriends}: SkillsProps) {
     }
 
     return <>
-        <div id='about' onMouseMove={debugMouse} className={"window " + fullscreen}>
+        <div id='friends' onMouseMove={debugMouse} className={"window " + fullscreen}
+             style={{ zIndex: zIndex }}
+        >
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowFriends(false); hideHoverInfo()}}
-                            onMouseEnter={() => displayHoverInfo("close about me")}
+                            onMouseEnter={() => displayHoverInfo("close friends")}
                             onMouseLeave={hideHoverInfo}>
                     </button>
                     <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
@@ -43,20 +50,43 @@ function About({showFriends, setShowFriends}: SkillsProps) {
                             onMouseLeave={hideHoverInfo}
                     ></button>
                     <button id="maximize"
-                            onMouseEnter={() => displayHoverInfo("maximize about me")}
+                            onMouseEnter={() => displayHoverInfo("maximize friends")}
                             onMouseLeave={hideHoverInfo}
                             onClick={() => makeFullScreen()}>
                     </button>
                </span>
                 <p>friends</p>
             </div>
-            <div id="about-content">
-                <p>
-                    All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank">Asphinal</a>
-                </p>
+            <div id="friends-content">
 
+                <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex">
+                    <div>
 
+                    </div>
+                    <p>alex</p>
+                </a>
+                <a href="" target="_blank" data-friend="oskar">
+                    <div>
+
+                    </div>
+                    <p>oskar</p>
+                </a>
+                <a href="" target="_blank" data-friend="maty">
+                    <div>
+
+                    </div>
+                    <p>maty</p>
+                </a>
+                <a href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki">
+                    <div>
+
+                    </div>
+                    <p>krystof</p>
+                </a>
             </div>
+            <p>
+                All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank">Asphinal</a>
+            </p>
 
         </div>
         {hoverText && (
@@ -70,9 +100,10 @@ function About({showFriends, setShowFriends}: SkillsProps) {
         setMousePos({x: event.clientX - 10, y: event.clientY + 25})
     }
 }
-export default About;
+export default Friends;
 
 interface SkillsProps {
     showFriends: boolean,
     setShowFriends: (showAbout: boolean) => void,
+    zIndex: number;
 }

@@ -52,13 +52,20 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
                 <p>about me</p>
             </div>
             <div id="about-content">
-                <h2>About Adris</h2>
-                <div className="content" >
+                <div className="profile" >
+                    <div className="profile-picture" ></div>
+                    <div className="profile-bio" ><h2 >Hi, I'm
+                        Adris</h2><p className="occupation">Student developer</p><p
+                        ><span >✧</span> 18 years old <br
+                        /><span >⚲</span> Czech republic, Zlínský
+                        Kraj</p></div>
+                </div>
+                <div className="content">
                     <hr className="divider"/>
-                    <div id="languages" ><h3>Languages</h3>
-                        <ul >
-                            <li ><b >Czech: </b>Mother tongue</li>
-                            <li ><b>English: </b>Fluent</li>
+                    <div id="languages"><h3>Languages</h3>
+                        <ul>
+                            <li><b>Czech: </b>Mother tongue</li>
+                            <li><b>English: </b>Fluent</li>
                         </ul>
                     </div>
                     <hr className="divider"/>

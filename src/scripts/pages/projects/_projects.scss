@@ -3,6 +3,7 @@
   @include responsive(mobile){
     height: 100vh;
   }
+  // comment
 
   #projects-content{
     @include flex(column, flex-start, $gap: 2rem);

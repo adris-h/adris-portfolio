@@ -9,6 +9,7 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile: boolean = window.innerWidth < 768;
+    // comment
     useEffect(() => {
         if(showProjects && !isMobile){
             Draggable.create(".window", {

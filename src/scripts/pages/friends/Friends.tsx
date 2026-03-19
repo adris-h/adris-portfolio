@@ -7,6 +7,7 @@ function Friends({showFriends, setShowFriends, zIndex}: SkillsProps) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile = window.innerWidth < 768;
+    // comment
 
     useEffect(() => {
         if(showFriends  && !isMobile){

@@ -7,6 +7,8 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile: boolean = window.innerWidth < 768;
+
+    // comment
     useEffect(() => {
         if(showAbout && !isMobile){
             Draggable.create(".window", {

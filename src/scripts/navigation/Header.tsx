@@ -34,7 +34,7 @@ function Header() {
     let formatted;
     function tickTime(){
         const now = new Date();
-        const options = {
+        const options: Intl.DateTimeFormatOptions = {
             timeZone: 'Europe/Prague',
             day: 'numeric',
             month: 'numeric',
@@ -43,7 +43,7 @@ function Header() {
             hour12: false,
         };
 
-        const options2 = {
+        const options2: Intl.DateTimeFormatOptions = {
             timeZone: 'Europe/Prague',
             weekday: 'short',
         }

@@ -19,6 +19,8 @@ function Nav() {
 
     const [globalZIndex, setGlobalZIndex] = useState(100);
 
+    console.log(globalZIndex)
+
     const [activeZIndexes, setActiveZIndexes] = useState({
         about: 100,
         friends: 100,

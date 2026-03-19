@@ -53,17 +53,42 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
             </div>
             <div id="about-content">
                 <h2>About Adris</h2>
-                <p>
-                   Eighteen year old student from Czech Republic.
-                </p>
-
+                <div className="content" >
+                    <hr className="divider"/>
+                    <div id="languages" ><h3>Languages</h3>
+                        <ul >
+                            <li ><b >Czech: </b>Mother tongue</li>
+                            <li ><b>English: </b>Fluent</li>
+                        </ul>
+                    </div>
+                    <hr className="divider"/>
+                    <div id="studies"><h3>Education</h3>
+                        <ul ><p >2024</p>
+                            <li ><a href="https://creativehill.cz/"><span id="chc-logo"></span><span>Secondary School of Film, Multimedia and Computer Technology, s.r.o.</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr className="divider"/>
+                    <div id="hobbies"><h3>Besides Coding</h3>
+                    </div>
+                    <hr className="divider" />
+                    <div id="principles">
+                        <h3 >What I Stand For</h3>
+                        <ul >
+                            <li ><h4>heading</h4><p>paragraph</p></li>
+                            <li ><h4 >heading</h4><p>paragraph</p></li>
+                            <li><h4 >heading</h4><p>paragraph</p></li>
+                            <li ><h4 >heading</h4><p>paragraph</p></li>
+                        </ul>
+                    </div>
+                </div>
 
 
             </div>
 
         </div>
         {hoverText && (
-            <div id="hoverText" style={{ left: mousePos.x, top: mousePos.y }}>
+            <div id="hoverText" style={{left: mousePos.x, top: mousePos.y}}>
                 {hoverText}
             </div>
         )}
@@ -73,6 +98,7 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
         setMousePos({x: event.clientX - 10, y: event.clientY + 25})
     }
 }
+
 export default About;
 
 interface SkillsProps {

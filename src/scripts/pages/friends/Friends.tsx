@@ -51,10 +51,15 @@ function About({showFriends, setShowFriends, zIndex}: SkillsProps) {
                 <p>friends</p>
             </div>
             <div id="about-content">
+                <div id="friends-content">
+                    <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex">
+                        <div></div>
+                        <p >alex</p>
+                    </a>
+                    <a href="" target="_blank" data-friend="oskar" ><div></div><p>oskar</p></a><a href="" target="_blank" data-friend="maty"><div ></div><p >maty</p></a><a href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki" ><div ></div><p >krystof</p></a></div>
                 <p>
                     All the icons were made by my friend and an awesome artist <a href="">Asphinal</a>
                 </p>
-
 
             </div>
 

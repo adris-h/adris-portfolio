@@ -655,10 +655,10 @@ body {
   border-bottom-right-radius: 10em;
   border-top-right-radius: 10em;
 }
-#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(2) {
+#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#html span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#css span:nth-child(3), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(2), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(3) {
   background-color: var(--accent-color);
 }
-#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#js span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#figma span:nth-child(1) {
+#skills .skills-content #skill-graphs .skill .skill-container .skill-graph#js span:nth-child(1) {
   background-color: var(--accent-color);
 }
 #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#react span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#unity span:nth-child(1), #skills .skills-content #skill-graphs .skill .skill-container .skill-graph#aseprite span:nth-child(1) {

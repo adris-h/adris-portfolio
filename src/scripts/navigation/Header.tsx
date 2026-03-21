@@ -1,6 +1,8 @@
 import {useState} from "react";
 import Resume from "../pages/home/Resume.tsx";
 
+
+
 function Header() {
     const [showResume, setShowResume] = useState(false);
     let formatted;

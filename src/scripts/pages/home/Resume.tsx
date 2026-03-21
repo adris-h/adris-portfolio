@@ -1,3 +1,4 @@
+import resumeUrl from "/src/assets/resume.webp"
 function Resume({showResume, setShowResume}: ResumeProps) {
     if (!showResume) {return null}
     function closeResume() {
@@ -7,7 +8,7 @@ function Resume({showResume, setShowResume}: ResumeProps) {
     return <>
         <div id="resume" onClick={closeResume}>
             <div>
-                <img src="/src/assets/resume.webp" alt=""/>
+                <img src={resumeUrl} alt=""/>
             </div>
         </div>
     </>

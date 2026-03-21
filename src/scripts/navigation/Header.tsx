@@ -1,6 +1,9 @@
-// import {useState} from "react";
+import {useState} from "react";
+import Resume from "../pages/home/Resume.tsx";
 
 function Header() {
+    const [showResume, setShowResume] = useState(false);
+    let formatted;
     /*
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);*/
@@ -24,14 +27,22 @@ function Header() {
         }, 500);
     }*/
 
-   /* function toggleMenu() {
-        if (isMenuOpen) {
-            closeMenu();
-        } else {
-            setIsMenuOpen(true);
+    /* function toggleMenu() {
+         if (isMenuOpen) {
+             closeMenu();
+         } else {
+             setIsMenuOpen(true);
+         }
+     }*/
+
+    function openResume() {
+        if (showResume) {
+            setShowResume(false);
+        } else{
+            setShowResume(true);
         }
-    }*/
-    let formatted;
+    }
+
     function tickTime(){
         const now = new Date();
         const options: Intl.DateTimeFormatOptions = {
@@ -61,7 +72,7 @@ function Header() {
     return <>
         <header id="header">
             <span id="header_left">
-
+                <a className="header-link link" id="resume-link" data-text="resume" onClick={openResume}>resume</a>
                {/* <a className="header-link link" data-link="cz" onClick={toggleMenu}></a>
                 <a className="header-link link" data-mode="light"></a>*/}
             </span>
@@ -75,6 +86,8 @@ function Header() {
                 </div>
             )}*/}
         </header>
+
+        <Resume showResume={showResume} setShowResume={setShowResume}></Resume>
     </>
 }
 

@@ -82,11 +82,14 @@
   height: $header-height;
   @include flex(row, space-between, center, 1rem);
   font-size: 1rem;
-  padding: 0 2rem 0 0;
+  padding: 0 1.5rem 0 1rem;
+  box-sizing: border-box;
 
   &_left{
     @include flex(row, center, center, 1rem);
     height: 100%;
+
+
   };
 
   .header-date{
@@ -119,7 +122,16 @@
       background-size: 80%;
     }
 
-    &:hover{
+    &#resume-link{
+      @include buttonComponent(8px);
+      position: relative;
+      cursor: pointer;
+      height: 1.5rem;
+      font-size: 0.7rem;
+      padding: 0 0.8rem;
+    }
+
+   /* &:hover{
       transform: scale(1.05);
       opacity: 1;
     }
@@ -127,7 +139,7 @@
     &:active{
       opacity: .9;
       transform: scale(1);
-    }
+    }*/
   }
 
   #language-holder{
@@ -222,5 +234,52 @@
 
   &:active{
     color: $acc-color;
+  }
+}
+
+#resume{
+  position: absolute;
+  top: 50%;
+  border: 1px solid red;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include flex(column, center, center, 0.2rem);
+
+  width: 100vw;
+  height: 100vh;
+  z-index: 9000;
+  background: rgba(0, 0, 0, 0.21);
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.5s forwards;
+
+  div{
+    width: 33%;
+    height: 79%;
+    animation: popOut 0.2s forwards;
+
+    img{
+      box-shadow: rgba(255, 255, 255, 0.09) 0 0 20px;
+      width: 100%;
+    }
+
+  }
+
+  a{
+    cursor: pointer;
+    position: relative;
+    @include buttonComponent(8px);
+    padding: 0.2em 0.8em;
+    font-size: .8rem;
+  }
+}
+
+@keyframes fadeIn{
+  0%{
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+  100%{
+    background: rgba(0, 0, 0, 0.21);
+    backdrop-filter: blur(3px);
   }
 }

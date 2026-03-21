@@ -6,15 +6,18 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
-
     const isMobile: boolean = window.innerWidth < 768;
+
+    // const [currentIndex, setCurrentIndex] = useState(zIndex);
 
 
     useEffect(() => {
         if(showSkills  && !isMobile){
             Draggable.create(".window", {
-                bounds: "body"
+                bounds: "body",
+                zIndexBoost: false
             });
+
         }
     }, [showSkills]);
     if (!showSkills) {return null}
@@ -33,8 +36,44 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
         }
     }
 
-    // make the biggest z index on pop up
 
+    const javaDate = new Date("2025-09");
+    const scssDate = new Date("2023-10");
+    const htmlDate = new Date("2023-10");
+    const pyDate = new Date("2025-01");
+    const jsDate = new Date("2024-10");
+    const figmaDate = new Date("2024-09");
+    const unityDate = new Date("2025-09");
+    const aseDate = new Date("2025-12");
+    const reactDate = new Date("2026-02");
+
+
+    function calculateTimeDiff(date: Date, forClass = false): string {
+        const now = new Date();
+        let months = (now.getFullYear() - date.getFullYear()) * 12;
+        months += now.getMonth() - date.getMonth();
+
+        if (now.getDate() < date.getDate()) {
+            months--;
+        }
+
+        const labels = {
+            y: forClass ? 'y' : ' year',
+            ys: forClass ? 'y' : ' years',
+            m: forClass ? 'm' : ' month',
+            ms: forClass ? 'm' : ' months'
+        };
+
+        if (months >= 12) {
+            const years = Math.floor(months / 12);
+            const suffix = years > 1 ? labels.ys : labels.y;
+            return forClass ? `${suffix}${years}`:`${years}${suffix}`;
+        }
+        const suffix = months <= 1 ? labels.m : labels.ms;
+        return forClass? `${suffix}`: `${months}${suffix}`;
+
+
+    }
 
     return <>
        <div id='skills' onMouseMove={debugMouse} className={"window " + fullscreen} style={{zIndex: zIndex}}>
@@ -62,8 +101,8 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                    <div className="skill web">
                         <h3>plain HTML</h3>
                       <div className="skill-container">
-                          <p>3 years</p>
-                          <div className="skill-graph" id="html">
+                          <p>{calculateTimeDiff(htmlDate)}</p>
+                          <div className="skill-graph" id={calculateTimeDiff(htmlDate, true)}>
                               <span></span>
                               <span></span>
                               <span></span>
@@ -74,10 +113,10 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                       </div>
                    </div>
                    <div className="skill web">
-                       <h3>CSS, now I use SCSS</h3>
+                       <h3>SCSS</h3>
                        <div className="skill-container">
-                           <p>3 years</p>
-                           <div className="skill-graph" id="css">
+                           <p>{calculateTimeDiff(scssDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(scssDate, true)}>
                                <span></span>
                                <span></span>
                                <span></span>
@@ -88,10 +127,10 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                        </div>
                    </div>
                    <div className="skill web">
-                       <h3>Javascript, trying to learn typescript</h3>
+                       <h3>Javascript, learning Typescript</h3>
                        <div className="skill-container">
-                           <p>1 year</p>
-                           <div className="skill-graph" id="js">
+                           <p>{calculateTimeDiff(jsDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(jsDate, true)}>
                                <span></span>
                                <span></span>
                                <span></span>
@@ -102,10 +141,10 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                        </div>
                    </div>
                    <div className="skill web">
-                       <h3>first time React for this portfolio </h3>
+                       <h3>first time <span>React</span> for this portfolio </h3>
                        <div className="skill-container">
-                           <p>months</p>
-                           <div className="skill-graph" id="react">
+                           <p>{calculateTimeDiff(reactDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(reactDate, true)}>
                                <span></span>
                                <span></span>
                                <span></span>
@@ -120,12 +159,13 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                        <a> Resonance</a>
                        {/*,<a href="#">in progress</a>*/}
                    </p>
+
                    <h2>Web Design</h2>
                    <div className="skill web">
                        <h3>figma ♥︎ </h3>
                        <div className="skill-container">
-                           <p>3 years</p>
-                           <div className="skill-graph" id="figma" >
+                           <p>{calculateTimeDiff(figmaDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(figmaDate, true)} >
                                <span></span>
                                <span></span>
                                <span></span>
@@ -145,8 +185,8 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                    <div className="skill ">
                        <h3>Unity C#</h3>
                        <div className="skill-container">
-                           <p>months</p>
-                           <div className="skill-graph" id="unity">
+                           <p>{calculateTimeDiff(unityDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(unityDate, true)}>
                                <span></span>
                                <span></span>
                                <span></span>
@@ -160,8 +200,8 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                    <div className="skill">
                        <h3>Aseprite</h3>
                        <div className="skill-container">
-                           <p>months</p>
-                           <div className="skill-graph" id="aseprite">
+                           <p>{calculateTimeDiff(aseDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(aseDate, true)}>
                                <span></span>
                                <span></span>
                                <span></span>
@@ -174,6 +214,36 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                    <p className="skill-projects">
                        some projects to checkout - <a>Guardians Of The Galaxy</a>
                    </p>
+
+                   <h2>Other..</h2>
+                   <div className="skill other">
+                       <h3>Java</h3>
+                       <div className="skill-container">
+                           <p>{calculateTimeDiff(javaDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(javaDate, true)}>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
+                   <div className="skill other">
+                       <h3>Python</h3>
+                       <div className="skill-container">
+                           <p>{calculateTimeDiff(pyDate)}</p>
+                           <div className="skill-graph" id={calculateTimeDiff(pyDate, true)}>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                               <span></span>
+                           </div>
+                           <p>5 years</p>
+                       </div>
+                   </div>
 
                </div>
            </div>

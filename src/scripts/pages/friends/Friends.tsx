@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
-function About({showFriends, setShowFriends, zIndex}: SkillsProps) {
+function About({showFriends, setShowFriends, zIndex}: FriendsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
@@ -29,9 +29,8 @@ function About({showFriends, setShowFriends, zIndex}: SkillsProps) {
             setFullScreen("");
         }
     }
-
     return <>
-        <div id='about' onMouseMove={debugMouse} className={"window " + fullscreen} style={{zIndex: zIndex}}>
+        <div id='friends' onMouseMove={debugMouse} className={"window " + fullscreen} style={{zIndex: zIndex}}>
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowFriends(false); hideHoverInfo()}}
@@ -77,7 +76,7 @@ function About({showFriends, setShowFriends, zIndex}: SkillsProps) {
 }
 export default About;
 
-interface SkillsProps {
+interface FriendsProps {
     showFriends: boolean,
     setShowFriends: (showAbout: boolean) => void,
     zIndex: number,

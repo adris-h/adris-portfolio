@@ -1,5 +1,5 @@
 #card{
-  @include flex(column);
+  @include flex(column, $gap: 0.3rem);
 
   background: rgba(24, 22, 22, 0.91);
   border-radius: 16px;
@@ -36,12 +36,10 @@
     border-radius: $border-radius;
     height: 6em;
 
-
-
     a{
       font-size: .8rem;
       text-decoration: none;
-      padding: 0.4rem 0.6rem;
+      padding: 0.3rem 0.6rem;
       border-radius: $border-radius;
       @include flex(row);
 
@@ -51,14 +49,14 @@
 
       @include buttonComponent($border-radius);
 
-      span{
+      /*span{
         height: 100%;
         aspect-ratio: 1/1;
         background-image: url("/src/assets/link-symbol.png");
         background-repeat: no-repeat;
         background-position: center center;
 
-      }
+      }*/
 
     }
   }

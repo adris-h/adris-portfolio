@@ -17,15 +17,15 @@ function Nav() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const isMobile: boolean = window.innerWidth < 768;
 
-    const [globalZIndex, setGlobalZIndex] = useState(100);
+    const [globalZIndex, setGlobalZIndex] = useState(999);
 
     console.log(globalZIndex)
 
     const [activeZIndexes, setActiveZIndexes] = useState({
-        about: 100,
-        friends: 100,
-        skills: 100,
-        projects: 100
+        about: globalZIndex,
+        friends: globalZIndex,
+        skills: globalZIndex,
+        projects: globalZIndex
     });
 
     function bringToFront(window: string) {

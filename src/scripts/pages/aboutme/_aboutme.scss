@@ -1,5 +1,6 @@
 #about{
   height: 70vh;
+
   @include responsive(mobile){
     height: 100vh;
   }

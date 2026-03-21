@@ -56,10 +56,10 @@ function Home() {
                 </div>
             </div>
             <div id="card_socials">
-                <a href="https://github.com/adris-h" target="_blank">github <span></span></a>
-                <a href="https://www.instagram.com/adrriz_/" target="_blank">instagram</a>
-                <a href="https://www.linkedin.com/in/adriana-hanouskov%C3%A1-7753a831a/" target="_blank">linkedin</a>
-                <a href="mailto:adrianahanouskova2007@gmail.com">mail</a>
+                <a href="https://github.com/adris-h" target="_blank" data-text="github">github <span></span></a>
+                <a href="https://www.instagram.com/adrriz_/" target="_blank" data-text="instagram">instagram</a>
+                <a href="https://www.linkedin.com/in/adriana-hanouskov%C3%A1-7753a831a/" target="_blank" data-text="linkedin">linkedin</a>
+                <a href="mailto:adrianahanouskova2007@gmail.com" data-text="mail">mail</a>
             </div>
         </div>
     </>

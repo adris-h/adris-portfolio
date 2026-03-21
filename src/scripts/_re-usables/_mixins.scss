@@ -9,8 +9,10 @@
 
 
 @mixin buttonComponent($border-radius){
+  overflow: hidden;
   &:before{
     content: "";
+
     position: absolute;
     height: 100%;
     width: 100%;
@@ -23,17 +25,24 @@
 
   }
   &:after{
-    content: "";
+    content: attr(data-text);
     position: absolute;
     height: 100%;
-    width: 0;
+    overflow: hidden;
     top: 0;
     left: 0;
     border-radius: $border-radius;
     background-color: $acc-color;
-    z-index: -1;
-    transition: $transition ease;
+    z-index: 1;
+    backdrop-filter: blur(10px) invert(80%);
+    color: $text-color;
+    inset: 0;
+    box-sizing: border-box;
 
+    @include flex(row);
+    white-space: nowrap;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path $transition ease;
   }
   transition: 100ms;
   color: black;
@@ -41,10 +50,11 @@
 
   &:hover{
     &:after{
-      width: 100%;
+      //width: 100%;
+      clip-path: inset(0 0 0 0);
     }
 
-    color: $text-color;
+    //color: $text-color;
   }
 }
 

@@ -105,7 +105,23 @@
               }
             }
 
-            &#html, &#css, &#figma {
+            &#y5 {
+              span {
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+                  background-color: $acc-color;
+                }
+              }
+            }
+
+            &#y4 {
+              span {
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+                  background-color: $acc-color;
+                }
+              }
+            }
+
+            &#y3 {
               span {
                 &:nth-child(1), &:nth-child(2), &:nth-child(3) {
                   background-color: $acc-color;
@@ -113,13 +129,23 @@
               }
             }
 
-            &#js {
+            &#y2 {
+              span {
+                &:nth-child(1), &:nth-child(2) {
+                  background-color: $acc-color;
+                }
+              }
+            }
+
+
+
+            &#y1 {
               span:nth-child(1) {
                 background-color: $acc-color;
               }
             }
 
-            &#react, &#unity, &#aseprite {
+            &#m {
               span {
                 &:nth-child(1) {
                   background: linear-gradient(90deg, $acc-color 0%, $acc-color 51%, $acc-color 50%, rgba(44, 20, 28, 0) 50%, rgba(45, 20, 28, 0) 51%, rgba(0, 0, 0, 0) 100%);;

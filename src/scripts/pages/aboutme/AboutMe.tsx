@@ -7,6 +7,7 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile: boolean = window.innerWidth < 768;
+
     useEffect(() => {
         if(showAbout && !isMobile){
             Draggable.create(".window", {
@@ -29,6 +30,16 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
         } else {
             setFullScreen("");
         }
+    }
+
+    function calculateBday(date: Date): string {
+        const now = new Date();
+        let months = (now.getFullYear() - date.getFullYear()) * 12;
+        months += now.getMonth() - date.getMonth();
+
+        const years = Math.floor(months / 12);
+
+        return `${years}`;
     }
 
     return <>
@@ -54,34 +65,45 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
             <div id="about-content">
                 <div className="profile" >
                     <div className="profile-picture" ></div>
-                    <div className="profile-bio" ><h2 >Hi, I'm
-                        Adris</h2><p className="occupation">Student developer</p><p
-                        ><span >✧</span> 18 years old <br
-                        /><span >⚲</span> Czech republic, Zlínský
-                        Kraj</p></div>
+                    <div className="profile-bio" >
+                        <h2 >Hi, I'm Adris</h2>
+                        <p className="occupation">Student developer</p>
+                        <p>
+                            <span >✧</span> {calculateBday(new Date("2007-08-31"))} years old <br/>
+                            <span >⚲</span> Czech republic, Zlínský Kraj
+                        </p>
+                    </div>
                 </div>
                 <div className="content">
                     <hr className="divider"/>
                     <div id="languages"><h3>Languages</h3>
                         <ul>
-                            <li><b>Czech: </b>Mother tongue</li>
+                            <li><b>Czech: </b>Native</li>
                             <li><b>English: </b>Fluent</li>
+
                         </ul>
                     </div>
                     <hr className="divider"/>
-                    <div id="studies"><h3>Education</h3>
-                        <ul ><p >2024</p>
+                    <div id="studies">
+                        <h3>Education</h3>
+                        <ul>
+                            <p >2024</p>
                             <li ><a href="https://creativehill.cz/"><span id="chc-logo"></span><span>Secondary School of Film, Multimedia and Computer Technology, s.r.o.</span></a>
                             </li>
                         </ul>
                     </div>
                     <hr className="divider"/>
-                    <div id="hobbies"><h3>Besides Coding</h3>
+                    <div id="hobbies">
+                        <h3>Besides Coding</h3>
+                        <p>
+                            Outside of programming I play bass, video games and sometimes I draw.
+                        </p>
+                        
                     </div>
                     <hr className="divider" />
                     <div id="principles">
-                        <h3 >What I Stand For</h3>
-                        <ul >
+                        <h3>What I Stand For</h3>
+                        <ul>
                             <li ><h4>heading</h4><p>paragraph</p></li>
                             <li ><h4 >heading</h4><p>paragraph</p></li>
                             <li><h4 >heading</h4><p>paragraph</p></li>

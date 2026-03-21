@@ -60,7 +60,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
             </div>
             <div id="friends-content">
                 <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex"
-                   onMouseEnter={() => showPortfolio("/src/assets/alex.webp")}
+                   onMouseEnter={() => showPortfolio("assets/alex.webp")}
                    onMouseLeave={() => hidePortfolio()}
                 >
                     <div></div>
@@ -73,7 +73,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
                     <div ></div><p >maty</p>
                 </a>
                 <a  href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki"
-                    onMouseEnter={() => showPortfolio("/src/assets/kiki.webp")}
+                    onMouseEnter={() => showPortfolio("assets/kiki.webp")}
                     onMouseLeave={() => hidePortfolio()}
                 >
                     <div ></div><p >krystof</p>
@@ -81,7 +81,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
             </div>
             <p>
                 All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank"
-                onMouseEnter={() => showPortfolio("/src/assets/jachym.webp")} onMouseLeave={() => hidePortfolio()}
+                onMouseEnter={() => showPortfolio("assets/jachym.webp")} onMouseLeave={() => hidePortfolio()}
             >Asphinal</a>
             </p>
 

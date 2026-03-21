@@ -147,7 +147,6 @@ interface ProjectsProps {
     showProjects: boolean;
     setShowProjects: (showProjects: boolean) => void;
     zIndex: number;
-    projectName: string;
 }
 
 export default Projects;

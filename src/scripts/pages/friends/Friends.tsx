@@ -2,6 +2,13 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
+
+import asphinalUrl from "/src/assets/jachym.webp";
+import alexUrl from "/src/assets/alex.webp";
+import kikiUrl from "/src/assets/kiki.webp";
+
+
+
 function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -60,7 +67,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
             </div>
             <div id="friends-content">
                 <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex"
-                   onMouseEnter={() => showPortfolio("assets/alex.webp")}
+                   onMouseEnter={() => showPortfolio(alexUrl)}
                    onMouseLeave={() => hidePortfolio()}
                 >
                     <div></div>
@@ -73,7 +80,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
                     <div ></div><p >maty</p>
                 </a>
                 <a  href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki"
-                    onMouseEnter={() => showPortfolio("assets/kiki.webp")}
+                    onMouseEnter={() => showPortfolio(kikiUrl)}
                     onMouseLeave={() => hidePortfolio()}
                 >
                     <div ></div><p >krystof</p>
@@ -81,7 +88,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
             </div>
             <p>
                 All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank"
-                onMouseEnter={() => showPortfolio("assets/jachym.webp")} onMouseLeave={() => hidePortfolio()}
+                onMouseEnter={() => showPortfolio(asphinalUrl)} onMouseLeave={() => hidePortfolio()}
             >Asphinal</a>
             </p>
 

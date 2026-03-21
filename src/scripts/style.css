@@ -984,7 +984,7 @@ body {
   aspect-ratio: 1/1;
   width: 60%;
   max-width: 300px;
-  background: url("src/assets/avata-redr.webp");
+  background: url("/src/assets/avata-redr.webp");
   background-size: cover;
   border-radius: 5%;
 }

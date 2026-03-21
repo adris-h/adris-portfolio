@@ -1005,6 +1005,16 @@ body {
   margin: 0;
 }
 
+#friend-portfolio {
+  position: absolute;
+  z-index: 9000;
+  animation: popOut 0.2s ease-in-out;
+}
+#friend-portfolio img {
+  width: 8rem;
+  border-radius: 15px;
+}
+
 #friends {
   height: 50vh;
   padding-bottom: 2rem;
@@ -1014,6 +1024,9 @@ body {
   #friends {
     height: 100vh;
   }
+}
+#friends > p a {
+  color: var(--accent-color);
 }
 #friends #friends-content {
   width: 100%;
@@ -1031,17 +1044,40 @@ body {
   text-decoration: none;
   position: relative;
 }
-#friends #friends-content a[data-friend=oskar]:before {
-  content: "hello im oskar";
+#friends #friends-content a[data-friend=oskar] {
+  /*&:before{
+    content: 'hello im oskar';
+  }*/
 }
-#friends #friends-content a[data-friend=maty]:before {
-  content: "hello im maty";
+#friends #friends-content a[data-friend=maty] {
+  /*&:before{
+    content: 'hello im maty';
+  }*/
 }
-#friends #friends-content a[data-friend=alex]:before {
-  content: "hello im alex";
+#friends #friends-content a[data-friend=maty] div {
+  background-image: url("/src/assets/matyando.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#friends #friends-content a[data-friend=kiki]:before {
-  content: "hello im krystof";
+#friends #friends-content a[data-friend=alex] {
+  /*&:before{
+    content: 'hello im alex';
+  }*/
+}
+#friends #friends-content a[data-friend=alex] div {
+  background-image: url("/src/assets/alexandro.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#friends #friends-content a[data-friend=kiki] {
+  /*&:before{
+    content: 'hello im krystof';
+  }*/
+}
+#friends #friends-content a[data-friend=kiki] div {
+  background-image: url("/src/assets/kikiando.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #friends #friends-content a:before {
   position: absolute;

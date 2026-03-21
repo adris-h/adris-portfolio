@@ -2,10 +2,11 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
-function About({showFriends, setShowFriends, zIndex}: FriendsProps) {
+function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
+    const [portfolio, setPortfolio] = useState<string | null>(null);
     const isMobile = window.innerWidth < 768;
     useEffect(() => {
         if(showFriends  && !isMobile){
@@ -17,6 +18,14 @@ function About({showFriends, setShowFriends, zIndex}: FriendsProps) {
     if (!showFriends) {return null}
     const displayHoverInfo = (info: string) => setHoverText(info);
     const hideHoverInfo = () => setHoverText(null);
+
+    function showPortfolio(url: string) {
+        setPortfolio(url);
+    }
+
+    function hidePortfolio() {
+        setPortfolio(null)
+    }
 
     function makeFullScreen() {
         if (fullscreen != "fullscreen") {
@@ -49,32 +58,54 @@ function About({showFriends, setShowFriends, zIndex}: FriendsProps) {
                </span>
                 <p>friends</p>
             </div>
-            <div id="about-content">
-                <div id="friends-content">
-                    <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex">
-                        <div></div>
-                        <p >alex</p>
-                    </a>
-                    <a href="" target="_blank" data-friend="oskar" ><div></div><p>oskar</p></a><a href="" target="_blank" data-friend="maty"><div ></div><p >maty</p></a><a href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki" ><div ></div><p >krystof</p></a></div>
-                <p>
-                    All the icons were made by my friend and an awesome artist <a href="">Asphinal</a>
-                </p>
-
+            <div id="friends-content">
+                <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex"
+                   onMouseEnter={() => showPortfolio("/src/assets/alex.webp")}
+                   onMouseLeave={() => hidePortfolio()}
+                >
+                    <div></div>
+                    <p>alex</p>
+                </a>
+                <a href="" target="_blank" data-friend="oskar"  >
+                    <div></div><p>oskar</p>
+                </a>
+                <a href="" target="_blank" data-friend="maty">
+                    <div ></div><p >maty</p>
+                </a>
+                <a  href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki"
+                    onMouseEnter={() => showPortfolio("/src/assets/kiki.webp")}
+                    onMouseLeave={() => hidePortfolio()}
+                >
+                    <div ></div><p >krystof</p>
+                </a>
             </div>
+            <p>
+                All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank"
+                onMouseEnter={() => showPortfolio("/src/assets/jachym.webp")} onMouseLeave={() => hidePortfolio()}
+            >Asphinal</a>
+            </p>
 
         </div>
-        {hoverText && (
+        {
+            hoverText && (
             <div id="hoverText" style={{ left: mousePos.x, top: mousePos.y }}>
                 {hoverText}
             </div>
         )}
+        {
+            portfolio && (
+                <div id="friend-portfolio" style={{left: mousePos.x, top: mousePos.y}}>
+                    <img src={portfolio} alt=""/>
+                </div>
+            )
+        }
     </>
 
     function debugMouse(event: React.MouseEvent) {
         setMousePos({x: event.clientX - 10, y: event.clientY + 25})
     }
 }
-export default About;
+export default Friends;
 
 interface FriendsProps {
     showFriends: boolean,

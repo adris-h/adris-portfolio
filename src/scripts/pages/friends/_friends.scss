@@ -1,3 +1,15 @@
+#friend-portfolio{
+  position: absolute;
+  z-index: 9000;
+  animation: popOut 0.2s ease-in-out;
+  img{
+
+    width: 8rem;
+    border-radius: 15px;
+  }
+}
+
+
 #friends{
   height: 50vh;
   padding-bottom: 2rem;
@@ -7,6 +19,11 @@
     height: 100vh;
   }
 
+  & > p{
+    a{
+      color: $acc-color;
+    }
+  }
   #friends-content{
     width: 100%;
     height: 300vh;
@@ -17,26 +34,44 @@
       text-decoration: none;
       position: relative;
 
+
+
       &[data-friend="oskar"]{
-        &:before{
+        /*&:before{
           content: 'hello im oskar';
-        }
+        }*/
       }
       &[data-friend="maty"]{
-        &:before{
-          content: 'hello im maty';
+        div{
+          background-image: url("/src/assets/matyando.webp");
+          background-repeat: no-repeat;
+          background-size: cover;
         }
+        /*&:before{
+          content: 'hello im maty';
+        }*/
       }
       &[data-friend="alex"]{
-        &:before{
-          content: 'hello im alex';
+        div{
+          background-image: url("/src/assets/alexandro.webp");
+          background-repeat: no-repeat;
+          background-size: cover;
         }
+        /*&:before{
+          content: 'hello im alex';
+        }*/
       }
       &[data-friend="kiki"]{
-        &:before{
-          content: 'hello im krystof';
+        div{
+          background-image: url("/src/assets/kikiando.webp");
+          background-repeat: no-repeat;
+          background-size: cover;
         }
+        /*&:before{
+          content: 'hello im krystof';
+        }*/
       }
+
 
       &:before{
         position: absolute;
@@ -75,5 +110,7 @@
   & > p {
     font-size: 0.8rem;
     margin: 0 3rem;
+
+
   }
 }

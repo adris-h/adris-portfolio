@@ -1184,6 +1184,7 @@ h2 {
   color: var(--text-color);
   padding: 0.4em 0.6em;
   z-index: 10000;
+  animation: forwards popOut 0.3s;
 }
 
 #footer {
@@ -1261,6 +1262,7 @@ h2 {
 .window .header button#nothing {
   background-color: #2d2d2d;
   margin-left: 0.5em;
+  transform: scale(1.05);
 }
 .window .header button#maximize {
   background-color: #28f42b;
@@ -1293,6 +1295,180 @@ h2 {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: color-mix(in srgb, var(--accent-color), 20% transparent);
+}
+
+.closing {
+  pointer-events: none;
+}
+
+#loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  animation: fadeOut 1s forwards;
+  animation-delay: 1.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  background: var(--bg-color);
+}
+#loader-window {
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+#loader-window #loader-header {
+  width: 100%;
+  height: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+#loader-window #loader-header #loading-text span {
+  animation: fading 2s infinite;
+}
+#loader-window #loader-header #loading-text span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+#loader-window #loader-header #loading-text span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+#loader-window #loader-header #loading-text span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+#loader-window #loader-header #loading-text span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+#loader-window #loader-header #loading-text span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+#loader-window #loader-header #loading-text span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+#loader-window #loader-header #ellipse-wrapper {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+#loader-window #loader-header #ellipse-wrapper span {
+  width: 0.8rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  animation: pulse 2s infinite ease-in-out;
+}
+#loader-window #loader-header #ellipse-wrapper span:nth-child(1) {
+  background-color: var(--accent-color);
+}
+#loader-window #loader-header #ellipse-wrapper span:nth-child(2) {
+  background-color: #2d2d2d;
+  margin-left: 0.5em;
+  width: 0.9rem;
+  animation-delay: 500ms;
+}
+#loader-window #loader-header #ellipse-wrapper span:nth-child(3) {
+  background-color: #28f42b;
+  margin-left: 0.5em;
+  animation-delay: 1000ms;
+}
+#loader-window #loader-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+#loader-window #loader-content p {
+  font-size: 4rem;
+}
+#loader-window #loader-content div {
+  border-radius: 15px;
+  background-color: rgba(216, 197, 197, 0.14);
+  animation: fading 1s infinite;
+}
+#loader-window #loader-content div:nth-child(1) {
+  width: 100%;
+  height: 30%;
+}
+#loader-window #loader-content div:nth-child(2) {
+  width: 100%;
+  height: 45%;
+}
+
+.transition-thingy {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 11000;
+  background: var(--accent-color);
+  transform: translateY(100%);
+  animation: transition 1s forwards ease-in-out;
+  animation-delay: 1.2s;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+@keyframes fading {
+  50% {
+    opacity: 0.6;
+  }
+}
+@keyframes transition {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

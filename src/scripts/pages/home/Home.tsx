@@ -62,6 +62,7 @@ function Home() {
                 <a href="mailto:adrianahanouskova2007@gmail.com" data-text="mail">mail</a>
             </div>
         </div>
+
     </>
 }
 

@@ -31,7 +31,7 @@
     opacity: .9;
     &[data-link="projects"]{
       .img{
-        background-image: url("../assets/folder.svg");
+        background-image: url("/src/assets/folder.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
@@ -40,7 +40,7 @@
 
     &[data-link="friends"]{
       .img{
-        background-image: url("../assets/friends.svg");
+        background-image: url("/src/assets/friends.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
@@ -49,7 +49,7 @@
 
     &[data-link="skills"]{
       .img{
-        background-image: url("../assets/skills.svg");
+        background-image: url("/src/assets/skills.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
@@ -57,7 +57,7 @@
     }
     &[data-link="about-me"]{
       .img{
-        background-image: url("../assets/aboutme.svg");
+        background-image: url("/src/assets/aboutme.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
@@ -108,7 +108,7 @@
 
     //border: 1px solid white;
 
-    &[data-mode="light"]{
+    /*&[data-mode="light"]{
       background-image: url("../assets/sun.svg");
       background-repeat: no-repeat;
       background-position: center;
@@ -120,7 +120,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 80%;
-    }
+    }*/
 
     &#resume-link{
       @include buttonComponent(8px);
@@ -239,38 +239,42 @@
 
 #resume{
   position: absolute;
-  top: 50%;
-  border: 1px solid red;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @include flex(column, center, center, 0.2rem);
-
+  top: 0;
   width: 100vw;
   height: 100vh;
   z-index: 9000;
+
   background: rgba(0, 0, 0, 0.21);
   backdrop-filter: blur(3px);
   animation: fadeIn 0.5s forwards;
-
+  @include flex(column, center, center, 0.2rem);
   div{
-    width: 33%;
-    height: 79%;
+    width: 100%;
+    height: 100%;
     animation: popOut 0.2s forwards;
+    @include flex(column, center, center, 0.2rem);
 
     img{
       box-shadow: rgba(255, 255, 255, 0.09) 0 0 20px;
-      width: 100%;
+      width: 35%;
     }
-
   }
 
-  a{
+  @include responsive(mobile){
+    div{
+      img{
+        width: 80%;
+      }
+    }
+  }
+
+ /* a{
     cursor: pointer;
     position: relative;
     @include buttonComponent(8px);
     padding: 0.2em 0.8em;
     font-size: .8rem;
-  }
+  }*/
 }
 
 @keyframes fadeIn{

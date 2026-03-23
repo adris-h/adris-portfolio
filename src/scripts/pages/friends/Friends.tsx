@@ -6,6 +6,7 @@ import gsap from "gsap";
 import asphinalUrl from "/src/assets/jachym.webp";
 import alexUrl from "/src/assets/alex.webp";
 import kikiUrl from "/src/assets/kiki.webp";
+import matyUrl from "/src/assets/maty.webp";
 
 
 
@@ -50,7 +51,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowFriends(false); hideHoverInfo()}}
-                            onMouseEnter={() => displayHoverInfo("close about me")}
+                            onMouseEnter={() => displayHoverInfo("close friends")}
                             onMouseLeave={hideHoverInfo}>
                     </button>
                     <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
@@ -58,7 +59,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
                             onMouseLeave={hideHoverInfo}
                     ></button>
                     <button id="maximize"
-                            onMouseEnter={() => displayHoverInfo("maximize about me")}
+                            onMouseEnter={() => displayHoverInfo("maximize friends")}
                             onMouseLeave={hideHoverInfo}
                             onClick={() => makeFullScreen()}>
                     </button>
@@ -76,8 +77,12 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
                 <a href="" target="_blank" data-friend="oskar"  >
                     <div></div><p>oskar</p>
                 </a>
-                <a href="" target="_blank" data-friend="maty">
+                <a href="https://tomioman.github.io/Portfolio/" target="_blank" data-friend="maty"
+                   onMouseEnter={() => showPortfolio(matyUrl)}
+                   onMouseLeave={() => hidePortfolio()}
+                >
                     <div ></div><p >maty</p>
+
                 </a>
                 <a  href="https://kriztovv.github.io/portfolio/" target="_blank" data-friend="kiki"
                     onMouseEnter={() => showPortfolio(kikiUrl)}

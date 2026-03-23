@@ -61,6 +61,13 @@
           background-repeat: no-repeat;
           background-position: center center;
         }
+        &[data-project="datingsim"]{
+          background: url("../assets/datingsim.webp");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+
+        }
 
       }
       .project-technologies{

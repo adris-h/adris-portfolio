@@ -101,7 +101,7 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
                         
                     </div>
                     <hr className="divider" />
-                    <div id="principles">
+                    {/*<div id="principles">
                         <h3>What I Stand For</h3>
                         <ul>
                             <li ><h4>heading</h4><p>paragraph</p></li>
@@ -109,7 +109,7 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
                             <li><h4 >heading</h4><p>paragraph</p></li>
                             <li ><h4 >heading</h4><p>paragraph</p></li>
                         </ul>
-                    </div>
+                    </div>*/}
                 </div>
 
 

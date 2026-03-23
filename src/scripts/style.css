@@ -645,6 +645,12 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+#projects #projects-content .project-container a[data-project=datingsim] {
+  background: url("../assets/datingsim.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 #projects #projects-content .project-container .project-technologies {
   display: flex;
   flex-direction: row;

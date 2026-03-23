@@ -18,7 +18,6 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
         }
     }, [showProjects]);
     function debugMouse(event: React.MouseEvent) {
-        //console.log(event);
         setMousePos({x: event.pageX - 10, y: event.pageY + 25})
 
     }
@@ -62,7 +61,7 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
             year: 2025,
             description: `First take on a portfolio - made for THE project of the first school year.`,
             url: "https://github.com/adris-h/portfolio",
-            hoverText: "open project on github",
+            hoverText: "open project",
             tech: ["Figma", "HTML/SCSS", "JavaScript", "GSAP"],
         },
         radianthq:{
@@ -71,8 +70,16 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
             description: `An informational website covering tactical shooter game 
             Valorant, created for a graded school project.`,
             url: "https://github.com/adris-h/radianthq",
-            hoverText: "open project on github",
+            hoverText: "open project",
             tech: ["Figma", "HTML/SCSS", "JavaScript"],
+        },
+        datingsim:{
+            name: "Dating Simulator",
+            year: 2025,
+            description: `Little fun game for Hackathon made with my friends. Although we didn't place anywhere, we still had loads of fun. We chose joy over monetary victory!!`,
+            url: "https://github.com/adris-h/datingSim",
+            hoverText: "open project",
+            tech: ["HTML/SCSS", "JavaScript"],
         }
     }
 
@@ -89,8 +96,6 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
                     data-project={projectName}
                     target="_blank"
                     href={project.url}
-                    onMouseEnter={() => displayHoverInfo(project.hoverText)}
-                    onMouseLeave={hideHoverInfo}
                 ></a>
                 <span className="project-technologies">
                    {project.tech.map((tech: string) => (
@@ -102,8 +107,14 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
     }
 
 
-    const displayHoverInfo = (info: string) => setHoverText(info);
-    const hideHoverInfo = () => setHoverText(null);
+    function displayHoverInfo(info: string){
+        setHoverText(info);
+    }
+
+    function hideHoverInfo(){
+        setHoverText(null);
+    }
+
     return <>
         <div id="projects" className={"window " + fullscreen} onMouseMove={debugMouse} style={{zIndex: zIndex}}>
             <div className="header">

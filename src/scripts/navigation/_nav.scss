@@ -113,22 +113,26 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 80%;
-    }
+    }*/
 
     &[data-link="cz"]{
       background-image: url("../assets/cz.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 80%;
-    }*/
+    }
 
     &#resume-link{
-      @include buttonComponent(8px);
+      @include buttonComponent(6px);
       position: relative;
       cursor: pointer;
       height: 1.5rem;
       font-size: 0.7rem;
       padding: 0 0.8rem;
+
+      &[data-text="životopis"]{
+        padding: 0 1rem;
+      }
     }
 
    /* &:hover{
@@ -144,14 +148,14 @@
 
   #language-holder{
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     margin-top: calc(#{$header-height} * 1.2);
 
     width: 30vw;
     height: 40vh;
 
-    @include flex(column, flex-start, flex-end, 1rem);
+    @include flex(column, flex-start, flex-start, .5rem);
     padding: 2vw 2vw;
 
     &.inactive{
@@ -168,11 +172,11 @@
     a{
       $border-radius: 0.2em;
       opacity: 0;
-
-      font-size: 1rem;
+      font-size: .8rem;
+      box-shadow: rgba(45, 45, 45, 0.25) 0 0 10px;
 
       text-decoration: none;
-      padding: 0.4em 0.6em;
+      padding: 0.4em 0.4em;
       border-radius: $border-radius;
 
       position: relative;
@@ -201,7 +205,7 @@
 @keyframes button-slide-in{
   from{
     opacity: 0;
-    transform: translateX(130%);
+    transform: translateX(-130%);
   }
   to{
     opacity: 1;
@@ -216,7 +220,7 @@
   }
   to{
     opacity: 0;
-    transform: translateX(130%);
+    transform: translateX(-130%);
   }
 }
 

@@ -5,18 +5,19 @@ import Loader from "./Loader.tsx";
 import {useState, useEffect} from "react";
 
 const currentYear = new Date().getFullYear()
+import {LanguageProvider} from "./LanguageContext.tsx";
 
 
 
 function App() {
 
-    const [progress, setProgress] = useState(0);
+    /*const [progress, setProgress] = useState(0);*/
     const [isDone, setIsDone] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const minimumTime = 1500
     const physicalMinimumTime = minimumTime/2;
 
-    console.log(progress)
+    /*console.log(progress)*/
 
     useEffect(() => {
         const startTime = Date.now();
@@ -27,7 +28,7 @@ function App() {
             const elapsedTime = Date.now() - startTime;
             const physicalProgress = Math.min(Math.floor((elapsedTime / physicalMinimumTime) * 100), 100);
 
-            setProgress(physicalProgress)
+            //setProgress(physicalProgress)
 
             if(physicalProgress < 100){
                 animationFrame = requestAnimationFrame(animate)
@@ -47,10 +48,10 @@ function App() {
         const handleLoad = () => {
            windowLoaded = true;
 
-            setProgress((prev) =>{
+            /*setProgress((prev) =>{
                 if(prev >=100) finishLoading();
                 return 100;
-            })
+            })*/
         };
         animationFrame = requestAnimationFrame(animate);
         if (document.readyState === "complete") {
@@ -75,12 +76,14 @@ function App() {
         }
         {
             isDone && <>
-                <Header/>
-                <section id="main-section">
-                    <Home/>
-                </section>
-                <Nav/>
-                <footer id="footer">All Rights Reserved @ {currentYear} Adris Han </footer>
+                <LanguageProvider>
+                    <Header/>
+                    <section id="main-section">
+                        <Home/>
+                    </section>
+                    <Nav/>
+                    <footer id="footer">All Rights Reserved @ {currentYear} Adris Han </footer>
+                </LanguageProvider>
             </>
         }
     </>

@@ -2,6 +2,7 @@ import * as React from "react";
 import {useEffect, useState} from "react";
 import gsap from "gsap";
 import Draggable from "gsap/dist/Draggable";
+import {useLanguage} from "../../LanguageContext.tsx";
 
 
 function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
@@ -9,6 +10,9 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile: boolean = window.innerWidth < 768;
+
+    const {t} = useLanguage();
+
     // comment
     useEffect(() => {
         if(showProjects && !isMobile){
@@ -42,7 +46,6 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
         year: number;
         description: string;
         url: string;
-        hoverText: string;
         tech: string[];
     }
 
@@ -50,36 +53,37 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
         resonance: {
             name: "Resonance",
             year: 2025,
-            description: `Fully functional music mixing/equalizer social app where 
-            users can import music save their EQ settings, and share them with others.`,
+            description: t("resonance"),
             url: "https://github.com/adris-h/resonance",
-            hoverText: "open project on github",
             tech: ["Figma", "HTML/SCSS", "JavaScript", "Firebase", "Web Audio API", "Waveform.js", "BeatDetect.js"]
         },
         portfolio: {
             name: "Portfolio",
             year: 2025,
-            description: `First take on a portfolio - made for THE project of the first school year.`,
-            url: "https://github.com/adris-h/portfolio",
-            hoverText: "open project",
+            description: t("portfolio"),
+            url: "https://adris-h.github.io/portfolio/",
             tech: ["Figma", "HTML/SCSS", "JavaScript", "GSAP"],
         },
         radianthq:{
             name: "RadiantHQ",
             year: 2025,
-            description: `An informational website covering tactical shooter game 
-            Valorant, created for a graded school project.`,
-            url: "https://github.com/adris-h/radianthq",
-            hoverText: "open project",
+            description: t("radianthq"),
+            url: "https://adris-h.github.io/radianthq/",
             tech: ["Figma", "HTML/SCSS", "JavaScript"],
         },
         datingsim:{
             name: "Dating Simulator",
             year: 2025,
-            description: `Little fun game for Hackathon made with my friends. Although we didn't place anywhere, we still had loads of fun. We chose joy over monetary victory!!`,
+            description: t("datingsim"),
             url: "https://github.com/adris-h/datingSim",
-            hoverText: "open project",
-            tech: ["HTML/SCSS", "JavaScript"],
+            tech: ["HTML/CSS", "JavaScript"],
+        },
+        lucidify:{
+            name: "Lucidify",
+            year: 2025,
+            description: t("lucidify"),
+            url: "https://adris-h.github.io/lucidifyWeb",
+            tech: ["HTML/CSS", "JavaScript"],
         }
     }
 
@@ -120,22 +124,22 @@ function Projects({showProjects, setShowProjects, zIndex}: ProjectsProps) {
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowProjects(false); hideHoverInfo()}}
-                            onMouseEnter={() => displayHoverInfo("close projects window")}
+                            onMouseEnter={() => displayHoverInfo(t("close") + " " + t("projects"))}
                             onMouseLeave={hideHoverInfo}>
                     </button>
-                    <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
-                            onMouseEnter={() => displayHoverInfo("does nothing")}
+                    <button id="nothing" onClick={() => displayHoverInfo(t("really"))}
+                            onMouseEnter={() => displayHoverInfo(t("nothing"))}
                             onMouseLeave={hideHoverInfo}
                     ></button>
                     <button id="maximize"
-                            onMouseEnter={() => displayHoverInfo("maximize projects window")}
+                            onMouseEnter={() => displayHoverInfo(t("maximize") + " " + t("projects"))}
                             onMouseLeave={hideHoverInfo}
                             onClick={() => {
                                 makeFullScreen();
                             }}>
                     </button>
                </span>
-                <p>projects</p>
+                <p>{t("projects")}</p>
             </div>
 
             <div id="projects-content">

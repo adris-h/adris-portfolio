@@ -8,6 +8,8 @@ import alexUrl from "/src/assets/alex.webp";
 import kikiUrl from "/src/assets/kiki.webp";
 import matyUrl from "/src/assets/maty.webp";
 
+import {useLanguage} from "../../LanguageContext.tsx";
+
 
 
 function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
@@ -16,6 +18,8 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
     const [fullscreen, setFullScreen] = useState("");
     const [portfolio, setPortfolio] = useState<string | null>(null);
     const isMobile = window.innerWidth < 768;
+
+    const {t} = useLanguage();
     useEffect(() => {
         if(showFriends  && !isMobile){
             Draggable.create(".window", {
@@ -51,20 +55,20 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowFriends(false); hideHoverInfo()}}
-                            onMouseEnter={() => displayHoverInfo("close friends")}
+                            onMouseEnter={() => displayHoverInfo(t("close") + " " + t("friends"))}
                             onMouseLeave={hideHoverInfo}>
                     </button>
-                    <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
-                            onMouseEnter={() => displayHoverInfo("does nothing")}
+                    <button id="nothing" onClick={() => displayHoverInfo(t("really"))}
+                            onMouseEnter={() => displayHoverInfo(t("nothing"))}
                             onMouseLeave={hideHoverInfo}
                     ></button>
                     <button id="maximize"
-                            onMouseEnter={() => displayHoverInfo("maximize friends")}
+                            onMouseEnter={() => displayHoverInfo(t("maximize") + " " + t("friends"))}
                             onMouseLeave={hideHoverInfo}
                             onClick={() => makeFullScreen()}>
                     </button>
                </span>
-                <p>friends</p>
+                <p>{t("friends")}</p>
             </div>
             <div id="friends-content">
                 <a href="https://izitaooo.github.io/Portfolio-2025/" target="_blank" data-friend="alex"
@@ -92,7 +96,7 @@ function Friends({showFriends, setShowFriends, zIndex}: FriendsProps) {
                 </a>
             </div>
             <p>
-                All the icons were made by my friend and an awesome artist <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank"
+                {t("asphinal")} <a href="https://open.spotify.com/artist/6gclKPlpzyCCAzYaGDkgBX" target="_blank"
                 onMouseEnter={() => showPortfolio(asphinalUrl)} onMouseLeave={() => hidePortfolio()}
             >Asphinal</a>
             </p>

@@ -1,41 +1,31 @@
 import {useState} from "react";
 import Resume from "../pages/home/Resume.tsx";
-
+import {useLanguage} from "../LanguageContext.tsx";
 
 
 function Header() {
     const [showResume, setShowResume] = useState(false);
     let formatted;
-    /*
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);*/
+    const [isClosing, setIsClosing] = useState(false);
+    const { language, changeLanguage, t } = useLanguage();
 
-    /*function langChange(e: React.MouseEvent<HTMLAnchorElement>) {
-        const target = e.target as HTMLAnchorElement;
-        const anchors = document.querySelectorAll("#language-holder a");
-        anchors.forEach((anchor) => {
-            anchor.classList.remove("active");
-        })
-        target.classList.add('active');
-        const language = target.dataset.lang;
-        console.log(language);
-    }*/
 
-    /*function closeMenu() {
+    function closeMenu() {
         setIsClosing(true);
         setTimeout(() => {
             setIsMenuOpen(false);
             setIsClosing(false);
         }, 500);
-    }*/
+    }
 
-    /* function toggleMenu() {
+     function toggleMenu() {
          if (isMenuOpen) {
              closeMenu();
          } else {
              setIsMenuOpen(true);
          }
-     }*/
+     }
 
     function openResume() {
         if (showResume) {
@@ -53,17 +43,17 @@ function Header() {
             month: 'numeric',
             hour: '2-digit',
             minute: '2-digit',
+            weekday: 'short',
             hour12: false,
         };
 
-        const options2: Intl.DateTimeFormatOptions = {
+      /*  const options2: Intl.DateTimeFormatOptions = {
             timeZone: 'Europe/Prague',
-            weekday: 'short',
-        }
 
-        const formatter = new Intl.DateTimeFormat('cs-CZ', options);
-        const formatter2 = new Intl.DateTimeFormat('en-UK', options2)
-        formatted = formatter2.format(now).replace(',', '') + " " + formatter.format(now).replace(',', '') ;
+        }*/
+
+        const formatter = language === "en"? new Intl.DateTimeFormat('en-UK', options): new Intl.DateTimeFormat('cs-CZ', options)
+        formatted = formatter.format(now).replace(',', '') ;
     }
 
     tickTime();
@@ -74,19 +64,19 @@ function Header() {
     return <>
         <header id="header">
             <span id="header_left">
-                <a className="header-link link" id="resume-link" data-text="resume" onClick={openResume}>resume</a>
-               {/* <a className="header-link link" data-link="cz" onClick={toggleMenu}></a>
-                <a className="header-link link" data-mode="light"></a>*/}
+                <a className="header-link link" id="resume-link" data-text={t("cv")} onClick={openResume}>{t("cv")}</a>
+                <a className="header-link link" data-link={language} onClick={toggleMenu}></a>
+               {/* <a className="header-link link" data-mode="light"></a>*/}
             </span>
             <a className="header-date" >
-                <span> my time</span> {formatted}
+                <span> {t("time")}</span> {formatted}
             </a>
-            {/*{isMenuOpen && (
+            {isMenuOpen && (
                 <div id="language-holder"   className={isClosing ? 'inactive' : ''}>
-                    <a href="#" className="active" onClick={langChange} data-lang="en">english</a>
-                    <a href="#" onClick={langChange} data-lang="cs">czech</a>
+                    <a href="#" className={language === "en"? "active" : ""} onClick={() => changeLanguage("en")} data-lang="en" data-text={t("lang-en")}>{t("lang-en")}</a>
+                    <a href="#" className={language === "cz"? "active" : ""} onClick={() => changeLanguage("cz")} data-lang="cz" data-text={t("lang-cz")}>{t("lang-cz")}</a>
                 </div>
-            )}*/}
+            )}
         </header>
 
         <Resume showResume={showResume} setShowResume={setShowResume}></Resume>

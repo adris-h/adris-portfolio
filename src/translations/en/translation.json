@@ -1,0 +1,47 @@
+
+{
+  "close": "close",
+  "maximize": "maximize",
+  "nothing": "does nothing",
+  "really": "really does nothing",
+
+  "_comment": "ABOUT ME",
+  "about": "about me",
+  "greeting": "Hi, I'm Adris",
+  "occupation": "Student developer",
+  "age": "years old",
+  "location": "Czech Republic, Zlin region",
+  "lang-heading": "Languages",
+  "lang-cz": "Czech",
+  "lang-en": "English",
+  "lang-native": "Native",
+  "lang-fluent": "Fluent",
+  "edu-h":"Education",
+  "edu-t": "Secondary School of Film, Multimedia and Computer Technology, s.r.o.",
+  "code-h": "Besides Coding",
+  "code-p": "Outside of programming I play bass, video games and sometimes I draw.",
+
+  "_comment2": "NAV & HEADER",
+  "cv": "resumé",
+  "time": "my time",
+
+  "_comment3": "SKILLS",
+  "skills": "skills",
+  "years": "years",
+  "other": "Other languages",
+  "html": "plain HTML",
+  "ts": "learning",
+  "react": "first time using React for this portfolio",
+
+  "_comment4": "PROJECTS",
+  "projects": "projects",
+  "resonance": "Fully functional music mixing/equalizer social app where users can import music save their EQ settings, and share them with others.",
+  "portfolio": "First take on a portfolio – created as a final project during my first year of school.",
+  "radianthq": "An informational website covering tactical shooter game Valorant, created for a graded school project.",
+  "datingsim": "Little fun game for school Hackathon made with my friends. Although we didn't place anywhere, we still had loads of fun. We chose joy over monetary victory!!",
+  "lucidify": "Design-to-code school project. Firstly we had to make it in figma, then code it and then re-do it in wordpress, i don't have the wp version :( (i do not like wordpress...)",
+
+  "_comment5": "FRIENDS",
+  "friends": "friends",
+  "asphinal": "All the icons were made by my friend and an awesome artist"
+}

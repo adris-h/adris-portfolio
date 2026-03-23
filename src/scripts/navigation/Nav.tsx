@@ -7,6 +7,7 @@ import { useState} from "react";
 import gsap from 'gsap';
 import Draggable from 'gsap/dist/Draggable';
 gsap.registerPlugin(Draggable)
+import {useLanguage} from "../LanguageContext.tsx";
 
 function Nav() {
     const [showSkills, setShowSkills] = useState(false)
@@ -17,9 +18,11 @@ function Nav() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const isMobile: boolean = window.innerWidth < 768;
 
+    const {t} = useLanguage();
+
     const [globalZIndex, setGlobalZIndex] = useState(999);
 
-    console.log(globalZIndex)
+    //console.log(globalZIndex)
 
     const [activeZIndexes, setActiveZIndexes] = useState({
         about: globalZIndex,
@@ -45,27 +48,27 @@ function Nav() {
                 setShowAbout(true)
                 bringToFront("about")
             }}
-               onMouseEnter={() => displayHoverInfo("about me")}
+               onMouseEnter={() => displayHoverInfo(t("about"))}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>
-                <span className="name">about me</span>
+                <span className="name">{t("skills")}</span>
             </a>
             <a className="nav-link link" href="#" data-link="skills" onClick={()=> {
                 setShowSkills(true)
                 bringToFront("skills")
             }}
-               onMouseEnter={() => displayHoverInfo("skills")}
+               onMouseEnter={() => displayHoverInfo(t("skills"))}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>
-                <span className="name">skills</span>
+                <span className="name">{t("skills")}</span>
             </a>
             <a className="nav-link link" href="#" data-link="projects" onClick={() => {
                 setShowProjects(true)
                 bringToFront("projects")
             }}
-               onMouseEnter={() => displayHoverInfo("projects")}
+               onMouseEnter={() => displayHoverInfo(t("projects"))}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>
@@ -75,7 +78,7 @@ function Nav() {
                 setShowFriends(true)
                 bringToFront("friends")
             }}
-               onMouseEnter={() => displayHoverInfo("friends")}
+               onMouseEnter={() => displayHoverInfo(t("friends"))}
                onMouseLeave={hideHoverInfo}
             >
                 <span className="img"></span>

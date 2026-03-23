@@ -1,10 +1,4 @@
 function Loader() {
-
-
-
-
-
-
     return <>
         <div id="loader" >
             <div id="loader-window">

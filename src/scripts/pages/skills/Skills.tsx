@@ -2,11 +2,15 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
+import {useLanguage} from "../../LanguageContext.tsx";
+
 function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile: boolean = window.innerWidth < 768;
+
+    const {language, t} = useLanguage();
 
     // const [currentIndex, setCurrentIndex] = useState(zIndex);
 
@@ -64,14 +68,42 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
             ms: forClass ? 'm' : ' months'
         };
 
-        if (months >= 12) {
-            const years = Math.floor(months / 12);
-            const suffix = years > 1 ? labels.ys : labels.y;
-            return forClass ? `${suffix}${years}`:`${years}${suffix}`;
+        const labelsCZ = {
+            y: forClass ? 'y' : ' rok',
+            ys: forClass ? 'y' : ' roky',
+            yss: forClass ? 'y' : ' let',
+            m: forClass ? 'm' : ' měsíc',
+            ms: forClass ? 'm' : ' měsíce',
+            mss: forClass? 'm': 'měsíců'
         }
-        const suffix = months <= 1 ? labels.m : labels.ms;
-        return forClass? `${suffix}`: `${months}${suffix}`;
 
+        if(language == "en"){
+            if (months >= 12) {
+                const years = Math.floor(months / 12);
+                const suffix = years > 1 ? labels.ys : labels.y;
+                return forClass ? `${suffix}${years}`:`${years}${suffix}`;
+            }
+            const suffix = months <= 1 ? labels.m : labels.ms;
+            return forClass? `${suffix}`: `${months}${suffix}`;
+        } else if (language == "cz"){
+            if (months >= 12) {
+                const years = Math.floor(months / 12);
+                let suffix = labelsCZ.y;
+
+                if(years > 1){
+                    suffix = years > 4 ? labelsCZ.yss : labelsCZ.ys;
+                }
+                return forClass ? `${suffix}${years}`:`${years}${suffix}`;
+            }
+            let suffix = labelsCZ.m;
+            if(months > 1){
+                suffix = months > 4? labelsCZ.mss : labelsCZ.ms
+            }
+
+            return forClass? `${suffix}`:`${months} ${suffix}`;
+        }
+
+        return "";
 
     }
 
@@ -80,26 +112,26 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
            <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowSkills(false); hideHoverInfo()}}
-                            onMouseEnter={() => displayHoverInfo("close skills")}
+                            onMouseEnter={() => displayHoverInfo(t("close") + " " + t("skills"))}
                             onMouseLeave={hideHoverInfo}>
                     </button>
-                    <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
-                            onMouseEnter={() => displayHoverInfo("does nothing")}
+                    <button id="nothing" onClick={() => displayHoverInfo(t("really"))}
+                            onMouseEnter={() => displayHoverInfo(t("nothing"))}
                             onMouseLeave={hideHoverInfo}
                     ></button>
                     <button id="maximize"
-                            onMouseEnter={() => displayHoverInfo("maximize skills")}
+                            onMouseEnter={() => displayHoverInfo(t("maximize") + " " + t("skills"))}
                             onMouseLeave={hideHoverInfo}
                             onClick={() => makeFullScreen()}>
                     </button>
                </span>
-               <p>skills</p>
+               <p>{t("skills")}</p>
            </div>
            <div className="skills-content">
                <div id="skill-graphs">
                    <h2>Web Development</h2>
                    <div className="skill web">
-                        <h3>plain HTML</h3>
+                        <h3>{t("html")}</h3>
                       <div className="skill-container">
                           <p>{calculateTimeDiff(htmlDate)}</p>
                           <div className="skill-graph" id={calculateTimeDiff(htmlDate, true)}>
@@ -109,7 +141,7 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                               <span></span>
                               <span></span>
                           </div>
-                          <p>5 years</p>
+                          <p>5 {t("years")}</p>
                       </div>
                    </div>
                    <div className="skill web">
@@ -123,11 +155,11 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
                    <div className="skill web">
-                       <h3>Javascript, learning Typescript</h3>
+                       <h3>Javascript, {t("ts")} Typescript</h3>
                        <div className="skill-container">
                            <p>{calculateTimeDiff(jsDate)}</p>
                            <div className="skill-graph" id={calculateTimeDiff(jsDate, true)}>
@@ -137,11 +169,11 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
                    <div className="skill web">
-                       <h3>first time <span>React</span> for this portfolio </h3>
+                       <h3>{t("react")}</h3>
                        <div className="skill-container">
                            <p>{calculateTimeDiff(reactDate)}</p>
                            <div className="skill-graph" id={calculateTimeDiff(reactDate, true)}>
@@ -151,14 +183,14 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
-                   <p className="skill-projects">
+                   {/*<p className="skill-projects">
                        some projects to checkout -
-                       <a> Resonance</a>
-                       {/*,<a href="#">in progress</a>*/}
-                   </p>
+                       <a>Resonance</a>
+                       ,<a href="#">in progress</a>
+                   </p>*/}
 
                    <h2>Web Design</h2>
                    <div className="skill web">
@@ -172,14 +204,14 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
-                   <p className="skill-projects">
+                   {/*<p className="skill-projects">
                        some projects to checkout -
                        <a>RadiantHQ </a>,
                        <a> Lucidify</a>
-                   </p>
+                   </p>*/}
 
                    <h2>Game Development</h2>
                    <div className="skill ">
@@ -193,7 +225,7 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
 
@@ -208,14 +240,14 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
-                   <p className="skill-projects">
+                   {/*<p className="skill-projects">
                        some projects to checkout - <a>Guardians Of The Galaxy</a>
-                   </p>
+                   </p>*/}
 
-                   <h2>Other..</h2>
+                   <h2>{t("other")}</h2>
                    <div className="skill other">
                        <h3>Java</h3>
                        <div className="skill-container">
@@ -227,7 +259,7 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
                    <div className="skill other">
@@ -241,7 +273,7 @@ function Skills({showSkills, setShowSkills, zIndex}: SkillsProps) {
                                <span></span>
                                <span></span>
                            </div>
-                           <p>5 years</p>
+                           <p>5 {t("years")}</p>
                        </div>
                    </div>
 

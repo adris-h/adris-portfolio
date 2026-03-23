@@ -34,7 +34,7 @@
 
 
     #skill-graphs {
-      @include flex(column, flex-start, $gap: .8rem);
+      @include flex(column, flex-start, $gap: .2rem);
       h2 {
         text-align: center;
 

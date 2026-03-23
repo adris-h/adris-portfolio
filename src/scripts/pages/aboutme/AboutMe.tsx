@@ -2,11 +2,14 @@ import {useEffect, useState} from "react";
 import * as React from "react";
 import Draggable from "gsap/dist/Draggable";
 import gsap from "gsap";
+import {useLanguage} from "../../LanguageContext.tsx";
+
 function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
     const [hoverText, setHoverText] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [fullscreen, setFullScreen] = useState("");
     const isMobile: boolean = window.innerWidth < 768;
+    const { t } = useLanguage();
 
     useEffect(() => {
         if(showAbout && !isMobile){
@@ -47,56 +50,57 @@ function About({showAbout, setShowAbout, zIndex}: SkillsProps) {
             <div className="header">
                <span>
                     <button id="close" onClick={() => {setShowAbout(false); hideHoverInfo()}}
-                            onMouseEnter={() => displayHoverInfo("close about me")}
+                            onMouseEnter={() => displayHoverInfo(t("close") + " " + t("about"))}
                             onMouseLeave={hideHoverInfo}>
                     </button>
-                    <button id="nothing" onClick={() => displayHoverInfo("really does nothing")}
-                            onMouseEnter={() => displayHoverInfo("does nothing")}
+                    <button id="nothing" onClick={() => displayHoverInfo(t("really"))}
+                            onMouseEnter={() => displayHoverInfo(t("nothing"))}
                             onMouseLeave={hideHoverInfo}
                     ></button>
                     <button id="maximize"
-                            onMouseEnter={() => displayHoverInfo("maximize about me")}
+                            onMouseEnter={() => displayHoverInfo(t("maximize") + " " + t("about"))}
                             onMouseLeave={hideHoverInfo}
                             onClick={() => makeFullScreen()}>
                     </button>
                </span>
-                <p>about me</p>
+                <p>{t("about")}</p>
             </div>
             <div id="about-content">
                 <div className="profile" >
                     <div className="profile-picture" ></div>
                     <div className="profile-bio" >
-                        <h2 >Hi, I'm Adris</h2>
-                        <p className="occupation">Student developer</p>
+                        <h2>{t("greeting")}</h2>
+                        <p className="occupation">{t(("occupation"))}</p>
                         <p>
-                            <span >✧</span> {calculateBday(new Date("2007-08-31"))} years old <br/>
-                            <span >⚲</span> Czech republic, Zlínský Kraj
+                            <span >✧</span> {calculateBday(new Date("2007-08-31"))} {t("age")} <br/>
+                            <span >⚲</span> {t("location")}
                         </p>
                     </div>
                 </div>
                 <div className="content">
                     <hr className="divider"/>
-                    <div id="languages"><h3>Languages</h3>
+                    <div id="languages"><h3>{t("lang-heading")}</h3>
                         <ul>
-                            <li><b>Czech: </b>Native</li>
-                            <li><b>English: </b>Fluent</li>
+                            <li><b>{t("lang-cz")}: </b>{t("lang-native")}</li>
+                            <li><b>{t("lang-en")}: </b>{t("lang-fluent")}</li>
 
                         </ul>
                     </div>
                     <hr className="divider"/>
                     <div id="studies">
-                        <h3>Education</h3>
+                        <h3>{t("edu-h")}</h3>
                         <ul>
                             <p >2024</p>
-                            <li ><a href="https://creativehill.cz/"><span id="chc-logo"></span><span>Secondary School of Film, Multimedia and Computer Technology, s.r.o.</span></a>
+                            <li ><a href="https://creativehill.cz/"><span id="chc-logo"></span>
+                                <span>{t("edu-t")}</span></a>
                             </li>
                         </ul>
                     </div>
                     <hr className="divider"/>
                     <div id="hobbies">
-                        <h3>Besides Coding</h3>
+                        <h3>{t("code-h")}</h3>
                         <p>
-                            Outside of programming I play bass, video games and sometimes I draw.
+                            {t("code-p")}
                         </p>
                         
                     </div>

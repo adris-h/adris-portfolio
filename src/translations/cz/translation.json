@@ -1,0 +1,48 @@
+{
+  "close": "zavřít",
+  "maximize": "zvětšit",
+  "nothing": "nic to nedělá",
+  "really": "fakt to nic nedělá",
+
+  "_comment": "ABOUT ME",
+  "about": "o mně",
+  "greeting": "Adris",
+  "occupation": "Student vývojář",
+  "age": "let",
+  "location": "Česká Republika, ZLínský kraj",
+  "lang-heading": "Jazyky",
+  "lang-cz": "Čeština",
+  "lang-en": "Angličtina",
+  "lang-native": "Native",
+  "lang-fluent": "Fluent",
+  "edu-h":"Studium",
+  "edu-t": "Střední škola filmová, multimediální a počítačových technologií , s.r.o.",
+  "code-h": "Mimo kód",
+  "code-p": "Kromě programování hraju na baskytaru, hraju videohry a občas i kreslím.",
+
+  "_comment2": "NAV & HEADER",
+  "cv": "životopis",
+  "time": "můj čas",
+
+  "_comment3": "SKILLS",
+  "skills": "dovednosti",
+  "years": "let",
+  "other": "Další jazyky",
+  "html": "čistý HTML",
+  "ts": "učím se",
+  "react": "poprvé používám React pro tohle portfolio",
+
+  "_comment4": "PROJECTS",
+  "projects": "projekty",
+  "resonance": "Plně funkční sociální aplikace pro mixování hudby a ekvalizaci, ve které mohou uživatelé importovat hudbu, ukládat svá nastavení ekvalizéru a sdílet je s ostatními.",
+  "portfolio": "První pokus o portfolio – vytvořené jako klauzurní práce v prvním školním roce.",
+  "radianthq": "Informační web věnovaný taktické střílečce Valorant, vytvořený v rámci školního projektu.",
+  "datingsim": "Malá fun hra pro školní hackathon, kterou jsme vytvořili s kamarády. I když jsme se neumístili, tak jsme si to užili. Radost jsme upřednostnili před finanční výhrou!!",
+  "lucidify": "Školní design-to-code projekt. Nejdřív jsme to museli vytvořit ve Figmě, pak to vytvořit v html/css a nakonec to znovu udělat ve wordpressu, wp verzi nemám :( (nemám ráda wordpress ...)",
+
+
+
+  "_comment5": "FRIENDS",
+  "friends": "kamarádi",
+  "asphinal": "Všechny ikony byly vytvořeny mým kamarádem a skvělým umělcem"
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --text-color: #fbf9e9;
   --bg-color: #181616;
@@ -170,13 +171,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
-  }
-
-  &[data-link="cz"]{
-    background-image: url("../assets/cz.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 80%;
   }*/
   /* &:hover{
      transform: scale(1.05);
@@ -187,6 +181,12 @@ body {
      opacity: .9;
      transform: scale(1);
    }*/
+}
+#header .header-link[data-link=cz] {
+  background-image: url("../assets/cz.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
 }
 #header .header-link#resume-link {
   overflow: hidden;
@@ -206,7 +206,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: var(--text-color);
   z-index: -1;
   transition: 200ms;
@@ -218,7 +218,7 @@ body {
   overflow: hidden;
   top: 0;
   left: 0;
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: var(--accent-color);
   z-index: 1;
   backdrop-filter: blur(10px) invert(80%);
@@ -238,9 +238,12 @@ body {
 #header .header-link#resume-link:hover:after {
   clip-path: inset(0 0 0 0);
 }
+#header .header-link#resume-link[data-text=životopis] {
+  padding: 0 1rem;
+}
 #header #language-holder {
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   margin-top: calc(10vh * 1.2);
   width: 30vw;
@@ -248,8 +251,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 0.5rem;
   flex-wrap: nowrap;
   padding: 2vw 2vw;
 }
@@ -261,9 +264,10 @@ body {
 }
 #header #language-holder a {
   opacity: 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  box-shadow: rgba(45, 45, 45, 0.25) 0 0 10px;
   text-decoration: none;
-  padding: 0.4em 0.6em;
+  padding: 0.4em 0.4em;
   border-radius: 0.2em;
   position: relative;
   cursor: pointer;
@@ -325,7 +329,7 @@ body {
 @keyframes button-slide-in {
   from {
     opacity: 0;
-    transform: translateX(130%);
+    transform: translateX(-130%);
   }
   to {
     opacity: 1;
@@ -339,7 +343,7 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateX(130%);
+    transform: translateX(-130%);
   }
 }
 .link {
@@ -651,6 +655,12 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+#projects #projects-content .project-container a[data-project=lucidify] {
+  background: url("../assets/lucidify.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 #projects #projects-content .project-container .project-technologies {
   display: flex;
   flex-direction: row;
@@ -714,7 +724,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.2rem;
   flex-wrap: nowrap;
 }
 #skills .skills-content #skill-graphs h2 {

@@ -121,6 +121,12 @@
       background-position: center;
       background-size: 80%;
     }
+    &[data-link="en"]{
+      background-image: url("../assets/uk.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
 
     &#resume-link{
       @include buttonComponent(6px);

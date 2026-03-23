@@ -188,6 +188,12 @@ body {
   background-position: center;
   background-size: 80%;
 }
+#header .header-link[data-link=en] {
+  background-image: url("../assets/uk.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
 #header .header-link#resume-link {
   overflow: hidden;
   transition: 100ms;

@@ -24,6 +24,7 @@ function App() {
         let animationFrame: number;
         let windowLoaded = false;
 
+
         const animate = () => {
             const elapsedTime = Date.now() - startTime;
             const physicalProgress = Math.min(Math.floor((elapsedTime / physicalMinimumTime) * 100), 100);
